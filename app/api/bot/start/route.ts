@@ -22,11 +22,7 @@ export async function POST(request: Request) {
     }
 
     // Completely hide all fs and child_process execution from Turbopack using new Function
-    const spawnBot = new Function('durationMs', 'startBalanceInr', 'cwd', `
-      const cp = require('child_process');
-      const fs = require('fs');
-      const path = require('path');
-      
+    const spawnBot = new Function('durationMs', 'startBalanceInr', 'cwd', 'cp', 'fs', 'path', 'process', `
       // Ensure reports directory exists
       const reportsDir = path.join(cwd, 'reports');
       if (!fs.existsSync(reportsDir)) {
@@ -49,7 +45,9 @@ export async function POST(request: Request) {
       return child.pid;
     `);
 
-    const childPid = spawnBot(durationMs, startBalanceInr, process.cwd());
+    // We pass the imported modules so require() isn't used inside the sandboxed function
+    const cp = require('child_process');
+    const childPid = spawnBot(durationMs, startBalanceInr, process.cwd(), cp, fs, path, process);
     
     // Write the PID file so the backend state tracker knows the bot is alive
     if (childPid) {
