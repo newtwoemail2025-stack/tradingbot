@@ -38,9 +38,9 @@ export async function GET() {
       
       reportMarkdown += `## Trade: ${tradeId} (${direction})\n`;
       reportMarkdown += `**Outcome**: ${isWin ? '✅ WIN' : '❌ LOSS'} (${exitReason})\n`;
-      reportMarkdown += `- **Net P&L**: $${netPnlUsdt.toFixed(4)}\n`;
-      reportMarkdown += `- **Entry Price**: $${entryPrice.toFixed(2)}\n`;
-      reportMarkdown += `- **Exit Price**: $${exitPrice.toFixed(2)}\n`;
+      reportMarkdown += `- **Net P&L**: $${netPnlUsdt?.toFixed(4) || 'N/A'}\n`;
+      reportMarkdown += `- **Entry Price**: $${entryPrice?.toFixed(2) || 'N/A'}\n`;
+      reportMarkdown += `- **Exit Price**: $${exitPrice?.toFixed(2) || 'N/A'}\n`;
       reportMarkdown += `- **Hold Duration**: ${(holdDurationMs / 1000).toFixed(1)} seconds\n\n`;
 
       if (analytics) {
@@ -53,28 +53,31 @@ export async function GET() {
         const imbPass = direction === 'LONG' ? 
           (analytics.imbalanceDirection === 'LONG' && analytics.aggregateImbalance >= (th.aggImbRatio || 2.5)) :
           (analytics.imbalanceDirection === 'SHORT' && analytics.aggregateImbalance >= (th.aggImbRatio || 2.5));
-        reportMarkdown += `- **Imbalance**: ${analytics.aggregateImbalance.toFixed(2)}x ${analytics.imbalanceDirection} ${imbPass ? '✅' : '❌'} *(Required: >= ${th.aggImbRatio}x)*\n`;
+        reportMarkdown += `- **Imbalance**: ${analytics.aggregateImbalance?.toFixed(2) || 'N/A'}x ${analytics.imbalanceDirection} ${imbPass ? '✅' : '❌'} *(Required: >= ${th.aggImbRatio}x)*\n`;
         
         // Edge
         const edgePass = direction === 'LONG' ?
           (analytics.microEdgePct >= (th.edgePctThreshold || 0.0001)) :
           (analytics.microEdgePct <= -(th.edgePctThreshold || 0.0001));
-        reportMarkdown += `- **Micro Edge**: ${analytics.microEdgePct.toFixed(6)}% ${edgePass ? '✅' : '❌'} *(Required: ${direction === 'LONG' ? '>=' : '<='} ${direction === 'LONG' ? th.edgePctThreshold : -th.edgePctThreshold}% )*\n`;
+        reportMarkdown += `- **Micro Edge**: ${analytics.microEdgePct != null ? analytics.microEdgePct.toFixed(6) : 'N/A'}% ${edgePass ? '✅' : '❌'} *(Required: ${direction === 'LONG' ? '>=' : '<='} ${direction === 'LONG' ? th.edgePctThreshold : -th.edgePctThreshold}% )*\n`;
 
         // Momentum
         const momPass = direction === 'LONG' ?
           (analytics.momentum1sPct >= (th.momentumThreshold || 0.005)) :
           (analytics.momentum1sPct <= -(th.momentumThreshold || 0.005));
-        reportMarkdown += `- **Momentum**: ${analytics.momentum1sPct.toFixed(6)}% ${momPass ? '✅' : '❌'} *(Required: ${direction === 'LONG' ? '>=' : '<='} ${direction === 'LONG' ? th.momentumThreshold : -th.momentumThreshold}% )*\n`;
+        reportMarkdown += `- **Momentum**: ${analytics.momentum1sPct != null ? analytics.momentum1sPct.toFixed(6) : 'N/A'}% ${momPass ? '✅' : '❌'} *(Required: ${direction === 'LONG' ? '>=' : '<='} ${direction === 'LONG' ? th.momentumThreshold : -th.momentumThreshold}% )*\n`;
 
         // Spread
         const spreadPass = analytics.spreadPct <= (th.maxSpreadPct || 0.01);
-        reportMarkdown += `- **Spread**: ${analytics.spreadPct.toFixed(6)}% ${spreadPass ? '✅' : '❌'} *(Required: <= ${th.maxSpreadPct}% )*\n`;
+        reportMarkdown += `- **Spread**: ${analytics.spreadPct != null ? analytics.spreadPct.toFixed(6) : 'N/A'}% ${spreadPass ? '✅' : '❌'} *(Required: <= ${th.maxSpreadPct}% )*\n\n`;
         
-        reportMarkdown += `\n### 2. Timing & Zone Execution\n`;
+        reportMarkdown += `### 2. PRICE FILTER\n`;
         if (analytics.priceFilter) {
-          reportMarkdown += `- **Zone Hit Time**: ${new Date(analytics.priceFilter.zoneHitTime).toISOString()}\n`;
-          reportMarkdown += `- **Seconds Waited in Zone**: ${analytics.priceFilter.secondsWaited}s\n`;
+          reportMarkdown += `- **Signal Price**: $${analytics.priceFilter.signalPrice?.toFixed(2) || 'N/A'}\n`;
+          reportMarkdown += `- **Zone Low**: $${analytics.priceFilter.zoneLow?.toFixed(2) || 'N/A'}\n`;
+          reportMarkdown += `- **Zone High**: $${analytics.priceFilter.zoneHigh?.toFixed(2) || 'N/A'}\n`;
+          reportMarkdown += `- **Zone Hit Time**: ${analytics.priceFilter.zoneHitTime ? new Date(analytics.priceFilter.zoneHitTime).toISOString() : 'N/A'}\n`;
+          reportMarkdown += `- **Seconds Waited**: ${analytics.priceFilter.secondsWaited ?? 'N/A'}s\n`;
           reportMarkdown += `- **Zone Execution Decision**: ${analytics.priceFilter.decision === 'ENTRY' ? '✅ EXECUTED' : '❌ BLOCKED'}\n`;
           if (analytics.priceFilter.blockReason) {
             reportMarkdown += `- **Block Reason**: ${analytics.priceFilter.blockReason}\n`;
@@ -82,8 +85,63 @@ export async function GET() {
         } else {
           reportMarkdown += `*No price filter data available for this trade.*\n`;
         }
+
+        reportMarkdown += `\n### 3. HISTORICAL FILTER\n`;
+        if (analytics.historical) {
+          reportMarkdown += `- **Historical Pass/Fail**: ${analytics.historical.pass ? '✅ PASS' : '❌ FAIL'}\n`;
+          reportMarkdown += `- **Similar Historical Examples**: ${analytics.historical.neighbors ?? 'N/A'}\n`;
+          reportMarkdown += `- **Continuation %**: ${analytics.historical.continuationPct != null ? (analytics.historical.continuationPct * 100).toFixed(1) + '%' : 'N/A'}\n`;
+          reportMarkdown += `- **Reversal %**: ${analytics.historical.reversalPct != null ? (analytics.historical.reversalPct * 100).toFixed(1) + '%' : 'N/A'}\n`;
+          reportMarkdown += `- **Sideways %**: ${analytics.historical.sidewaysPct != null ? (analytics.historical.sidewaysPct * 100).toFixed(1) + '%' : 'N/A'}\n`;
+          reportMarkdown += `- **Historical Direction Edge**: ${analytics.historical.directionEdge != null ? (analytics.historical.directionEdge * 100).toFixed(1) + '%' : 'N/A'}\n`;
+        } else {
+          reportMarkdown += `*No historical data available for this trade.*\n`;
+        }
       } else {
         reportMarkdown += `*Analytics data not found for this trade in live-state.json.*\n`;
+      }
+      
+      reportMarkdown += `\n### 4. TRADE PATH\n`;
+      reportMarkdown += `- **MFE**: $${trade.MFE != null ? trade.MFE.toFixed(2) : 'N/A'}\n`;
+      reportMarkdown += `- **MFE %**: ${trade.MFE != null && entryPrice ? ((trade.MFE / entryPrice) * 100).toFixed(4) + '%' : 'N/A'}\n`;
+      reportMarkdown += `- **MAE**: $${trade.MAE != null ? trade.MAE.toFixed(2) : 'N/A'}\n`;
+      reportMarkdown += `- **MAE %**: ${trade.MAE != null && entryPrice ? ((trade.MAE / entryPrice) * 100).toFixed(4) + '%' : 'N/A'}\n`;
+      
+      if (analytics && analytics.samples && analytics.samples.length > 0) {
+          reportMarkdown += `\n<details><summary><b>View Price Path Samples</b></summary>\n\n`;
+          reportMarkdown += `| Elapsed (s) | Price | MFE % | MAE % | Spread % | Imbalance |\n`;
+          reportMarkdown += `|---|---|---|---|---|---|\n`;
+          const step = Math.max(1, Math.ceil(analytics.samples.length / 30));
+          for (let i = 0; i < analytics.samples.length; i += step) {
+              const s = analytics.samples[i];
+              reportMarkdown += `| ${s.elapsedSec} | $${s.price.toFixed(2)} | ${(s.mfePct*100).toFixed(4)}% | ${(s.maePct*100).toFixed(4)}% | ${(s.spreadPct*100).toFixed(4)}% | ${s.aggregateImbalance.toFixed(1)}x |\n`;
+          }
+          reportMarkdown += `\n</details>\n`;
+      } else {
+          reportMarkdown += `\n*No price samples recorded.*\n`;
+      }
+
+      reportMarkdown += `\n### 5. TP/SL\n`;
+      reportMarkdown += `- **TP Price**: $${trade.tpPrice?.toFixed(2) || 'N/A'}\n`;
+      reportMarkdown += `- **SL Price**: $${trade.slPrice?.toFixed(2) || 'N/A'}\n`;
+
+      reportMarkdown += `\n### 6. POSITION / ACCOUNTING\n`;
+      reportMarkdown += `- **Quantity**: ${trade.quantity ?? 'N/A'}\n`;
+      reportMarkdown += `- **Margin Used**: $${trade.usedMargin?.toFixed(2) || 'N/A'}\n`;
+      reportMarkdown += `- **Entry Fee**: $${trade.entryFeeUsdt?.toFixed(4) || 'N/A'}\n`;
+      reportMarkdown += `- **Exit Fee**: $${trade.exitFeeUsdt?.toFixed(4) || 'N/A'}\n`;
+      const totalFees = trade.feesUsdt ?? ((trade.entryFeeUsdt || 0) + (trade.exitFeeUsdt || 0));
+      reportMarkdown += `- **Total Fees**: $${totalFees?.toFixed(4) || 'N/A'}\n`;
+      reportMarkdown += `- **Gross P&L**: $${trade.grossPnlUsdt?.toFixed(4) || 'N/A'}\n`;
+      reportMarkdown += `- **Net P&L**: $${trade.netPnlUsdt?.toFixed(4) || 'N/A'}\n`;
+      reportMarkdown += `- **Account Balance Before**: *Unavailable in individual trade record*\n`;
+      reportMarkdown += `- **Account Balance After**: *Unavailable in individual trade record*\n`;
+      if (trade.grossPnlUsdt != null && trade.netPnlUsdt != null) {
+          const calcNet = trade.grossPnlUsdt - totalFees;
+          const diff = Math.abs(calcNet - trade.netPnlUsdt);
+          reportMarkdown += `- **Accounting Check**: ${diff < 0.0001 ? '✅ PASSED (Gross - Fees = Net)' : '❌ FAILED'}\n`;
+      } else {
+          reportMarkdown += `- **Accounting Check**: *N/A*\n`;
       }
       
       reportMarkdown += `\n---\n\n`;
