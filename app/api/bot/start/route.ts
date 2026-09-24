@@ -21,7 +21,10 @@ export async function POST(request: Request) {
       }
     }
 
-    const scriptPath = path.join(process.cwd(), 'scripts', 'phase51-15m-live-runner.js');
+    // Prevent Turbopack from trying to statically bundle the script file
+    const scriptFolder = 'scripts';
+    const scriptFile = 'phase51-15m-live-runner.js';
+    const scriptPath = path.join(process.cwd(), scriptFolder, scriptFile);
     
     const out = fs.openSync(path.join(process.cwd(), 'reports', 'spawn-debug.log'), 'a');
     const err = fs.openSync(path.join(process.cwd(), 'reports', 'spawn-debug.err'), 'a');
