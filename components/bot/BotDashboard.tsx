@@ -16,6 +16,7 @@ export function BotDashboard() {
   const [inputCapital, setInputCapital] = useState(1000);
   const [isStarting, setIsStarting] = useState(false);
   const [timeLeftStr, setTimeLeftStr] = useState<string>('--:--');
+  const [expandedTradeId, setExpandedTradeId] = useState<string | null>(null);
 
   // Price Tracker state
   const [priceHistory, setPriceHistory] = useState<{ time: Date, ask: number, bid: number }[]>([]);
@@ -450,42 +451,92 @@ export function BotDashboard() {
                 displayTrades.sort((a, b) => b.entryTime - a.entryTime);
 
                 return displayTrades.map((t: any, idx: number) => (
-                  <tr key={`${t.tradeId}-${idx}`} className={`border-b border-gray-800/50 hover:bg-white/[0.02] ${t.status === 'OPEN' ? 'bg-blue-900/10' : ''}`}>
-                    <td className="py-3 text-gray-400">{t.tradeId}</td>
-                    <td className={`py-3 font-bold ${t.direction === 'LONG' ? 'text-green-500' : 'text-red-500'}`}>{t.direction}</td>
-                    <td className="py-3 text-[10px] text-gray-400">{t.entryReason || '---'}</td>
-                    <td className="py-3">${t.entryPrice.toFixed(2)}</td>
-                    <td className="py-3 text-gray-400">${t.tpPrice ? t.tpPrice.toFixed(2) : '---'}</td>
-                    <td className="py-3 text-gray-400">${t.slPrice ? t.slPrice.toFixed(2) : '---'}</td>
-                    <td className="py-3 text-gray-400">{new Date(t.entryTime).toLocaleTimeString()}</td>
-                    <td className="py-3">{t.exitPrice ? `$${t.exitPrice.toFixed(2)}` : '---'}</td>
-                    <td className="py-3 text-gray-400">{t.exitPrice ? (t.holdDurationMs / 1000).toFixed(1) : '---'}</td>
-                    <td className="py-3 text-gray-500">${t.feesUsdt ? t.feesUsdt.toFixed(4) : (t.entryFeeUsdt ? t.entryFeeUsdt.toFixed(4) : '0.0000')}</td>
-                    <td className={`py-3 text-right font-bold ${t.netPnlUsdt >= 0 ? 'text-green-500' : 'text-red-500'}`}>
-                      {t.netPnlUsdt ? `$${t.netPnlUsdt.toFixed(4)}` : '---'}
-                    </td>
-                    <td className="py-3 pl-4 text-center">
-                      <div className="flex items-center justify-center gap-2">
-                        <span className={`px-2 py-1 text-[10px] uppercase rounded ${t.status === 'COMPLETED_TRADE' ? (t.exitReason === 'TP' ? 'bg-green-900/30 text-green-500 border border-green-900' : t.exitReason === 'MANUAL_CLOSE' ? 'bg-purple-900/30 text-purple-400 border border-purple-900' : 'bg-red-900/30 text-red-500 border border-red-900') : 'bg-blue-900/30 text-blue-400 border border-blue-900 animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.3)]'}`}>
-                          {t.status === 'OPEN' ? 'LIVE' : t.exitReason}
-                        </span>
-                        {t.status === 'OPEN' && (
-                          <button
-                            onClick={async () => {
-                              await fetch('/api/bot/close-position', {
-                                method: 'POST',
-                                headers: { 'Content-Type': 'application/json' },
-                                body: JSON.stringify({ tradeId: t.positionIndex })
-                              });
-                            }}
-                            className="px-2 py-1 text-[10px] uppercase rounded bg-red-900/50 text-red-400 border border-red-700 hover:bg-red-700 hover:text-white transition-colors"
-                          >
-                            ✕ Close
-                          </button>
-                        )}
-                      </div>
-                    </td>
-                  </tr>
+                  <React.Fragment key={`${t.tradeId}-${idx}`}>
+                    <tr 
+                      onClick={() => setExpandedTradeId(expandedTradeId === t.tradeId ? null : t.tradeId)}
+                      className={`border-b border-gray-800/50 hover:bg-white/[0.02] cursor-pointer transition-colors ${t.status === 'OPEN' ? 'bg-blue-900/10' : ''}`}
+                    >
+                      <td className="py-3 text-gray-400 flex items-center gap-2">
+                        <span className="text-[10px] text-gray-600">{expandedTradeId === t.tradeId ? '▼' : '▶'}</span>
+                        {t.tradeId}
+                      </td>
+                      <td className={`py-3 font-bold ${t.direction === 'LONG' ? 'text-green-500' : 'text-red-500'}`}>{t.direction}</td>
+                      <td className="py-3 text-[10px] text-gray-400 max-w-[150px] truncate" title={t.entryReason}>{t.entryReason || '---'}</td>
+                      <td className="py-3">${t.entryPrice.toFixed(2)}</td>
+                      <td className="py-3 text-gray-400">${t.tpPrice ? t.tpPrice.toFixed(2) : '---'}</td>
+                      <td className="py-3 text-gray-400">${t.slPrice ? t.slPrice.toFixed(2) : '---'}</td>
+                      <td className="py-3 text-gray-400">{new Date(t.entryTime).toLocaleTimeString()}</td>
+                      <td className="py-3">{t.exitPrice ? `$${t.exitPrice.toFixed(2)}` : '---'}</td>
+                      <td className="py-3 text-gray-400">{t.exitPrice ? (t.holdDurationMs / 1000).toFixed(1) : '---'}</td>
+                      <td className="py-3 text-gray-500">${t.feesUsdt ? t.feesUsdt.toFixed(4) : (t.entryFeeUsdt ? t.entryFeeUsdt.toFixed(4) : '0.0000')}</td>
+                      <td className={`py-3 text-right font-bold ${t.netPnlUsdt >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+                        {t.netPnlUsdt != null ? `$${t.netPnlUsdt.toFixed(4)}` : '---'}
+                      </td>
+                      <td className="py-3 pl-4 text-center">
+                        <div className="flex items-center justify-center gap-2">
+                          <span className={`px-2 py-1 text-[10px] uppercase rounded ${t.status === 'COMPLETED_TRADE' ? (t.exitReason === 'TP' ? 'bg-green-900/30 text-green-500 border border-green-900' : t.exitReason === 'MANUAL_CLOSE' ? 'bg-purple-900/30 text-purple-400 border border-purple-900' : 'bg-red-900/30 text-red-500 border border-red-900') : 'bg-blue-900/30 text-blue-400 border border-blue-900 animate-pulse shadow-[0_0_10px_rgba(59,130,246,0.3)]'}`}>
+                            {t.status === 'OPEN' ? 'LIVE' : t.exitReason}
+                          </span>
+                          {t.status === 'OPEN' && (
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                fetch('/api/bot/close-position', {
+                                  method: 'POST',
+                                  headers: { 'Content-Type': 'application/json' },
+                                  body: JSON.stringify({ tradeId: t.positionIndex })
+                                });
+                              }}
+                              className="px-2 py-1 text-[10px] uppercase rounded bg-red-900/50 text-red-400 border border-red-700 hover:bg-red-700 hover:text-white transition-colors"
+                            >
+                              ✕ Close
+                            </button>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                    
+                    {expandedTradeId === t.tradeId && (
+                      <tr className="bg-[#0f1115] border-b border-gray-800">
+                        <td colSpan={12} className="p-4">
+                          <div className="flex gap-12 text-xs">
+                            {/* Execution Forensics */}
+                            <div>
+                              <div className="text-gray-500 font-bold mb-2 uppercase tracking-wider text-[10px]">Execution Data</div>
+                              <div className="grid grid-cols-2 gap-x-8 gap-y-1 text-gray-300">
+                                <div>Signal Price:</div><div className="text-white">${t.analytics?.priceFilter?.signalPrice?.toFixed(2) || '---'}</div>
+                                <div>Imbalance:</div><div className="text-white">{t.analytics?.aggregateImbalance?.toFixed(2) || '---'}x</div>
+                                <div>Micro Edge:</div><div className="text-white">{t.analytics?.microEdgePct != null ? (t.analytics.microEdgePct * 100).toFixed(4) + '%' : '---'}</div>
+                                <div>Momentum:</div><div className="text-white">{t.analytics?.momentum1sPct != null ? (t.analytics.momentum1sPct * 100).toFixed(4) + '%' : '---'}</div>
+                                <div>Spread:</div><div className="text-white">{t.analytics?.spreadPct != null ? (t.analytics.spreadPct * 100).toFixed(4) + '%' : '---'}</div>
+                              </div>
+                            </div>
+                            
+                            {/* Excursion Forensics */}
+                            <div>
+                              <div className="text-gray-500 font-bold mb-2 uppercase tracking-wider text-[10px]">Trade Path</div>
+                              <div className="grid grid-cols-2 gap-x-8 gap-y-1 text-gray-300">
+                                <div>Max Fav. Excursion (MFE):</div><div className="text-green-400">{t.MFE != null ? '$' + t.MFE.toFixed(2) : '---'}</div>
+                                <div>Max Adv. Excursion (MAE):</div><div className="text-red-400">{t.MAE != null ? '$' + t.MAE.toFixed(2) : '---'}</div>
+                                <div>Entry Fee:</div><div className="text-gray-400">{t.entryFeeUsdt != null ? '$' + t.entryFeeUsdt.toFixed(4) : '---'}</div>
+                                <div>Exit Fee:</div><div className="text-gray-400">{t.exitFeeUsdt != null ? '$' + t.exitFeeUsdt.toFixed(4) : '---'}</div>
+                              </div>
+                            </div>
+
+                            {/* Historical Forensics */}
+                            <div>
+                              <div className="text-gray-500 font-bold mb-2 uppercase tracking-wider text-[10px]">Historical Context</div>
+                              <div className="grid grid-cols-2 gap-x-8 gap-y-1 text-gray-300">
+                                <div>Continuation:</div><div className="text-white">{t.analytics?.historical?.continuationPct != null ? (t.analytics.historical.continuationPct * 100).toFixed(1) + '%' : '---'}</div>
+                                <div>Reversal:</div><div className="text-white">{t.analytics?.historical?.reversalPct != null ? (t.analytics.historical.reversalPct * 100).toFixed(1) + '%' : '---'}</div>
+                                <div>Sideways:</div><div className="text-white">{t.analytics?.historical?.sidewaysPct != null ? (t.analytics.historical.sidewaysPct * 100).toFixed(1) + '%' : '---'}</div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    )}
+                  </React.Fragment>
                 ));
               })()}
             </tbody>
