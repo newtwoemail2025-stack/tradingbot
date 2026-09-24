@@ -21,36 +21,32 @@ export async function POST(request: Request) {
       }
     }
 
-    // Evade Turbopack static analysis using base64
-    // cGhhc2U1MS0xNW0tbGl2ZS1ydW5uZXIuanM= is 'phase51-15m-live-runner.js'
-    const folder = Buffer.from('c2NyaXB0cw==', 'base64').toString('ascii'); // 'scripts'
-    const file = Buffer.from('cGhhc2U1MS0xNW0tbGl2ZS1ydW5uZXIuanM=', 'base64').toString('ascii');
-    const finalPath = path.join(process.cwd(), folder, file);
-    
-    const out = fs.openSync(path.join(process.cwd(), 'reports', 'spawn-debug.log'), 'a');
-    const err = fs.openSync(path.join(process.cwd(), 'reports', 'spawn-debug.err'), 'a');
+    // Completely hide all fs and child_process execution from Turbopack using new Function
+    const spawnBot = new Function('durationMs', 'startBalanceInr', `
+      const cp = require('child_process');
+      const fs = require('fs');
+      
+      const out = fs.openSync('reports/spawn-debug.log', 'a');
+      const err = fs.openSync('reports/spawn-debug.err', 'a');
+      
+      const child = cp.spawn('node', ['scripts/phase51-15m-live-runner.js'], {
+        detached: true,
+        stdio: ['ignore', out, err],
+        env: Object.assign({}, process.env, {
+          DURATION_MS: durationMs.toString(),
+          START_BALANCE_INR: startBalanceInr ? startBalanceInr.toString() : '1000'
+        })
+      });
+      
+      child.unref();
+      return child.pid;
+    `);
 
-    const cmd = 'node';
-    const spawnArgs = [finalPath];
-    const spawnOpts: any = {
-      detached: true,
-      stdio: ['ignore', out, err],
-      env: {
-        ...process.env,
-        DURATION_MS: durationMs.toString(),
-        START_BALANCE_INR: startBalanceInr ? startBalanceInr.toString() : '1000'
-      }
-    };
-
-    // Use bracket notation to prevent static analysis of spawn
-    const cp = require('child_process');
-    const child = cp['spawn'](cmd, spawnArgs, spawnOpts);
-
-    child.unref(); // Let the child run independently
+    const childPid = spawnBot(durationMs, startBalanceInr);
     
     // Write the PID file so the backend state tracker knows the bot is alive
-    if (child.pid) {
-        fs.writeFileSync(pidFile, child.pid.toString());
+    if (childPid) {
+        fs.writeFileSync(pidFile, childPid.toString());
     }
 
     // small delay to ensure PID is written
