@@ -22,14 +22,21 @@ export async function POST(request: Request) {
     }
 
     // Completely hide all fs and child_process execution from Turbopack using new Function
-    const spawnBot = new Function('durationMs', 'startBalanceInr', `
+    const spawnBot = new Function('durationMs', 'startBalanceInr', 'cwd', `
       const cp = require('child_process');
       const fs = require('fs');
+      const path = require('path');
       
-      const out = fs.openSync('reports/spawn-debug.log', 'a');
-      const err = fs.openSync('reports/spawn-debug.err', 'a');
+      // Ensure reports directory exists
+      const reportsDir = path.join(cwd, 'reports');
+      if (!fs.existsSync(reportsDir)) {
+          fs.mkdirSync(reportsDir, { recursive: true });
+      }
       
-      const child = cp.spawn('node', ['scripts/phase51-15m-live-runner.js'], {
+      const out = fs.openSync(path.join(reportsDir, 'spawn-debug.log'), 'a');
+      const err = fs.openSync(path.join(reportsDir, 'spawn-debug.err'), 'a');
+      
+      const child = cp.spawn('node', [path.join(cwd, 'scripts', 'phase51-15m-live-runner.js')], {
         detached: true,
         stdio: ['ignore', out, err],
         env: Object.assign({}, process.env, {
@@ -42,7 +49,7 @@ export async function POST(request: Request) {
       return child.pid;
     `);
 
-    const childPid = spawnBot(durationMs, startBalanceInr);
+    const childPid = spawnBot(durationMs, startBalanceInr, process.cwd());
     
     // Write the PID file so the backend state tracker knows the bot is alive
     if (childPid) {
