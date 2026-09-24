@@ -75,47 +75,12 @@ export async function GET() {
         if (analytics.priceFilter) {
           reportMarkdown += `- **Zone Hit Time**: ${new Date(analytics.priceFilter.zoneHitTime).toISOString()}\n`;
           reportMarkdown += `- **Seconds Waited in Zone**: ${analytics.priceFilter.secondsWaited}s\n`;
-        }
-
-        reportMarkdown += `\n### 3. Log Forensics (from spawn-debug.log)\n`;
-        
-        // Find log lines around this entry time
-        // We will look for lines matching RECHECK between zoneHitTime and entryTime + 2000ms
-        const startTime = analytics.priceFilter ? analytics.priceFilter.zoneHitTime : entryTime - 30000;
-        const endTime = entryTime + 2000;
-        
-        let foundLogs = false;
-        let failReasons: Record<string, number> = {};
-        
-        for (const line of logLines) {
-          // Attempt to extract timestamp if line has one like "2026-09-23T12:29:35.069Z"
-          const match = line.match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z/);
-          if (match) {
-            const lineTs = new Date(match[0]).getTime();
-            if (lineTs >= startTime && lineTs <= endTime) {
-              if (line.includes('[RECHECK_FAIL]')) {
-                const parts = line.split('[RECHECK_FAIL]');
-                const reason = parts[1].trim();
-                failReasons[reason] = (failReasons[reason] || 0) + 1;
-              }
-              if (line.includes('[RECHECK_PASS]')) {
-                foundLogs = true;
-                reportMarkdown += `**Successful Recheck**: \`${line.trim()}\`\n`;
-              }
-            }
+          reportMarkdown += `- **Zone Execution Decision**: ${analytics.priceFilter.decision === 'ENTRY' ? '✅ EXECUTED' : '❌ BLOCKED'}\n`;
+          if (analytics.priceFilter.blockReason) {
+            reportMarkdown += `- **Block Reason**: ${analytics.priceFilter.blockReason}\n`;
           }
-        }
-
-        if (Object.keys(failReasons).length > 0) {
-          foundLogs = true;
-          reportMarkdown += `**Failed Rechecks while waiting in zone**:\n`;
-          for (const [reason, count] of Object.entries(failReasons)) {
-            reportMarkdown += `- ${reason} (Failed ${count} times)\n`;
-          }
-        }
-        
-        if (!foundLogs) {
-          reportMarkdown += `*No specific recheck logs found in spawn-debug.log for this exact timeframe.*\n`;
+        } else {
+          reportMarkdown += `*No price filter data available for this trade.*\n`;
         }
       } else {
         reportMarkdown += `*Analytics data not found for this trade in live-state.json.*\n`;
