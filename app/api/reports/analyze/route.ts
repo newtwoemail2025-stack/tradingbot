@@ -32,7 +32,8 @@ export async function GET() {
     reportMarkdown += `*Analyzing ${closedTrades.length} fully closed trade(s) from session ${stateData.sessionId}*\n\n---\n\n`;
 
     for (const trade of closedTrades) {
-      const { tradeId, direction, entryPrice, exitPrice, exitReason, netPnlUsdt, entryTime, analytics, holdDurationMs } = trade;
+      const { tradeId, direction, entryPrice, exitPrice, exitReason, netPnlUsdt, entryTime, holdDurationMs } = trade;
+      const analytics = trade.analytics || trade.entryAnalytics;
       const isWin = netPnlUsdt > 0;
       
       reportMarkdown += `## Trade: ${tradeId} (${direction})\n`;
