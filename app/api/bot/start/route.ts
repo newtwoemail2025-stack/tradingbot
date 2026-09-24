@@ -21,13 +21,10 @@ export async function POST(request: Request) {
       }
     }
 
-    // Evade Turbopack static analysis completely
-    const s1 = 'scrip';
-    const s2 = 'ts';
-    const folder = s1 + s2;
-    const f1 = 'phase51-15m-live';
-    const f2 = '-runner.js';
-    const file = f1 + f2;
+    // Evade Turbopack static analysis using base64
+    // cGhhc2U1MS0xNW0tbGl2ZS1ydW5uZXIuanM= is 'phase51-15m-live-runner.js'
+    const folder = Buffer.from('c2NyaXB0cw==', 'base64').toString('ascii'); // 'scripts'
+    const file = Buffer.from('cGhhc2U1MS0xNW0tbGl2ZS1ydW5uZXIuanM=', 'base64').toString('ascii');
     const finalPath = path.join(process.cwd(), folder, file);
     
     const out = fs.openSync(path.join(process.cwd(), 'reports', 'spawn-debug.log'), 'a');
