@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { NextResponse } from 'next/server';
 import path from 'path';
 import fs from 'fs';
@@ -23,6 +24,21 @@ export async function GET() {
     if (fs.existsSync(stateFile)) {
       try {
         state = JSON.parse(fs.readFileSync(stateFile, 'utf8'));
+        
+        // Strip samples to save bandwidth and prevent dashboard freezing
+        if (state && state.allTrades) {
+            state.allTrades = state.allTrades.map((trade: any) => {
+                if (trade.analytics && trade.analytics.samples) {
+                    const { samples, ...restAnalytics } = trade.analytics;
+                    return { ...trade, analytics: restAnalytics };
+                }
+                if (trade.entryAnalytics && trade.entryAnalytics.samples) {
+                    const { samples, ...restAnalytics } = trade.entryAnalytics;
+                    return { ...trade, entryAnalytics: restAnalytics };
+                }
+                return trade;
+            });
+        }
       } catch(e) {}
     }
 

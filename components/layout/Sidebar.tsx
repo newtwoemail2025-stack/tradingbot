@@ -18,8 +18,16 @@ export const Sidebar = () => {
   const [selectedReport, setSelectedReport] = useState<{name: string, file: string, type: string} | null>(null);
   const [reportContent, setReportContent] = useState<string>('');
   const [loading, setLoading] = useState(false);
+  const [abortController, setAbortController] = useState<AbortController | null>(null);
 
   const openReport = async (report: {name: string, file: string, type: string}) => {
+    if (abortController) {
+      abortController.abort();
+    }
+    
+    const ctrl = new AbortController();
+    setAbortController(ctrl);
+    
     setSelectedReport(report);
     setLoading(true);
     setReportContent('');
@@ -28,7 +36,7 @@ export const Sidebar = () => {
         ? `/api/reports/${report.file}` 
         : `/api/reports?file=${report.file}`;
         
-      const res = await fetch(url);
+      const res = await fetch(url, { signal: ctrl.signal });
       if (res.ok) {
         const data = await res.json();
         setReportContent(data.content);
@@ -36,6 +44,7 @@ export const Sidebar = () => {
         setReportContent(`Error: File not found or couldn't be loaded.`);
       }
     } catch (e: any) {
+      if (e.name === 'AbortError') return;
       setReportContent(`Error fetching report: ${e.message}`);
     } finally {
       setLoading(false);
@@ -113,7 +122,7 @@ export const Sidebar = () => {
                 <button onClick={refreshReport} className="text-gray-400 hover:text-blue-400 transition-colors p-1" title="Refresh">
                   <RefreshCw size={20} className={loading ? "animate-spin text-blue-500" : ""} />
                 </button>
-                <button onClick={() => setSelectedReport(null)} className="text-gray-400 hover:text-red-500 transition-colors p-1" title="Close">
+                <button onClick={() => { if (abortController) { abortController.abort(); } setSelectedReport(null); }} className="text-gray-400 hover:text-red-500 transition-colors p-1" title="Close">
                   <X size={24} />
                 </button>
               </div>

@@ -27,7 +27,11 @@ export function BotDashboard() {
 
   // Poll Bot State to get Live Trades and Signals
   useEffect(() => {
+    let isCancelled = false;
+    let timerId: NodeJS.Timeout;
+
     const fetchState = async () => {
+      if (isCancelled) return;
       try {
         const res = await fetch('/api/bot/state');
         if (res.ok) {
@@ -61,10 +65,19 @@ export function BotDashboard() {
       } catch (e) {
         setIsRunning(false);
         setTimeLeftStr('--:--');
+      } finally {
+        if (!isCancelled) {
+          timerId = setTimeout(fetchState, 1000);
+        }
       }
     };
-    const iv = setInterval(fetchState, 1000);
-    return () => clearInterval(iv);
+    
+    fetchState();
+    
+    return () => {
+      isCancelled = true;
+      if (timerId) clearTimeout(timerId);
+    };
   }, []);
 
   // Capture price every 30 seconds for the UI tracker
@@ -420,7 +433,7 @@ export function BotDashboard() {
                     const holdMs = Date.now() - p.entryTs;
 
                     displayTrades.push({
-                      tradeId: 'OPEN-' + (displayTrades.length + idx + 1),
+                      tradeId: 'OPEN-' + p.entryTs,
                       positionIndex: idx,
                       direction: p.dir,
                       entryReason: p.reason || 'LIVE',
