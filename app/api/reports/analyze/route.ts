@@ -51,7 +51,7 @@ export async function GET() {
         
         // Imbalance
         const imbPass = direction === 'LONG' ? 
-          (analytics.imbalanceDirection === 'BUY' && analytics.aggregateImbalance >= (th.aggImbRatio || 2.5)) :
+          (analytics.imbalanceDirection === 'LONG' && analytics.aggregateImbalance >= (th.aggImbRatio || 2.5)) :
           (analytics.imbalanceDirection === 'SHORT' && analytics.aggregateImbalance >= (th.aggImbRatio || 2.5));
         reportMarkdown += `- **Imbalance**: ${analytics.aggregateImbalance.toFixed(2)}x ${analytics.imbalanceDirection} ${imbPass ? '✅' : '❌'} *(Required: >= ${th.aggImbRatio}x)*\n`;
         
