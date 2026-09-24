@@ -1,0 +1,60 @@
+{
+  "WebSocket": {
+    "File": "scratch/phase42b-live.js",
+    "Function": "io('wss://stream.coindcx.com')"
+  },
+  "Orderbook": {
+    "File": "scratch/phase42b-live.js",
+    "Function": "socket.onevent (orderbook)"
+  },
+  "Best Bid/Ask": {
+    "File": "scratch/phase42b-live.js",
+    "Function": "payload parser"
+  },
+  "Tick/trade data": {
+    "File": "scripts/phase45-data-collector.js",
+    "Function": "Tick jsonl collector"
+  },
+  "1-minute candle builder": {
+    "File": "scripts/phase43-fresh-validation.js",
+    "Function": "fetchFreshData()"
+  },
+  "Strategy": {
+    "File": "scripts/hf-tpsl-bailout-research.js",
+    "Function": "Multi-factor tick logic"
+  },
+  "Signal engine": {
+    "File": "scripts/hf-tpsl-bailout-research.js",
+    "Function": "config.logic"
+  },
+  "TP/SL engine": {
+    "File": "scripts/hf-tpsl-bailout-research.js",
+    "Function": "Tick loop exec"
+  },
+  "3-sec / 0.10% bailout": {
+    "File": "scripts/hf-tpsl-bailout-research.js",
+    "Function": "elapsedMs <= 3000 check"
+  },
+  "Paper execution": {
+    "File": "scratch/phase42b-live.js",
+    "Function": "executePaperTrade()"
+  },
+  "P&L": {
+    "File": "scripts/phase20b-audit.js",
+    "Function": "(priceDiff * actualQty * usdtInr)"
+  },
+  "Fee calculation": {
+    "File": "scripts/phase20b-audit.js",
+    "Function": "notionalInr * 0.001"
+  },
+  "Position manager": {
+    "File": "scripts/hf-tpsl-bailout-research.js",
+    "Function": "positionOpen block"
+  },
+  "Research runner": {
+    "File": "scripts/hf-tpsl-bailout-research.js"
+  },
+  "Report": {
+    "File": "reports/hf-tpsl-bailout-research.txt"
+  }
+}

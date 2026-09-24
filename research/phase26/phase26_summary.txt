@@ -1,0 +1,105 @@
+========================================
+PHASE 26 COMPLETE
+========================================
+
+DATA:
+Existing Phase 25B raw dataset
+
+ENTRIES:
+UNCHANGED
+
+TOTAL ENTRIES:
+11 (9 Executed Trades)
+
+========================================
+BEST EXIT CONFIGURATION IN THIS REPLAY
+========================================
+
+TP:
+0.75%
+
+SL:
+1.25%
+
+Trades:
+9
+
+TP First:
+55.5% (5 trades)
+
+SL First:
+22.2% (2 trades)
+
+Open:
+2
+
+Average Winner:
+₹8.15
+
+Average Loser:
+-₹13.50
+
+Profit Factor:
+1.51
+
+Gross P&L:
++₹13.75
+
+Total Costs:
+₹4.98
+
+NET P&L:
++₹8.77
+
+Expectancy:
++₹1.25
+
+Max Drawdown:
+-₹13.50
+
+₹10+ Winners:
+0
+
+₹15+ Winners:
+0
+
+₹20+ Winners:
+0
+
+========================================
+BASELINE
+========================================
+
+Phase 25B Net P&L:
+-₹4.96
+
+Phase 25B Expectancy:
+-₹0.70
+
+Best replay Net P&L:
++₹8.77
+
+Best replay Expectancy:
++₹1.25
+
+========================================
+CONCLUSION
+========================================
+
+Did any exit configuration improve the Phase 25B result?
+
+YES
+
+Did any configuration become positive AFTER COSTS?
+
+YES
+
+Did any configuration produce ₹10+ NET winners?
+
+NO (TP 0.75% yields ~₹8.15 net. Higher TPs were rarely hit).
+
+STATUS:
+INCONCLUSIVE
+
+DO NOT START A NEW LIVE TEST.
+WAIT FOR USER INSTRUCTION.

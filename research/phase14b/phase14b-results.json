@@ -1,0 +1,902 @@
+[
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.75-0.85",
+    "windowMs": 5000,
+    "obs": 58,
+    "meanReturnPct": "0.0043",
+    "diffPts": "0.0069",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.75-0.85",
+    "windowMs": 10000,
+    "obs": 57,
+    "meanReturnPct": "0.0059",
+    "diffPts": "0.0098",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.75-0.85",
+    "windowMs": 30000,
+    "obs": 57,
+    "meanReturnPct": "-0.0096",
+    "diffPts": "-0.0001",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.75-0.85",
+    "windowMs": 60000,
+    "obs": 57,
+    "meanReturnPct": "-0.0133",
+    "diffPts": "-0.0020",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.75-0.85",
+    "windowMs": 180000,
+    "obs": 53,
+    "meanReturnPct": "0.0053",
+    "diffPts": "0.0227",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_>0.85",
+    "windowMs": 5000,
+    "obs": 81,
+    "meanReturnPct": "0.0127",
+    "diffPts": "0.0152",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_>0.85",
+    "windowMs": 10000,
+    "obs": 81,
+    "meanReturnPct": "0.0145",
+    "diffPts": "0.0184",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_>0.85",
+    "windowMs": 30000,
+    "obs": 81,
+    "meanReturnPct": "0.0207",
+    "diffPts": "0.0302",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_>0.85",
+    "windowMs": 60000,
+    "obs": 81,
+    "meanReturnPct": "0.0223",
+    "diffPts": "0.0336",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_>0.85",
+    "windowMs": 180000,
+    "obs": 76,
+    "meanReturnPct": "0.0043",
+    "diffPts": "0.0217",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_>0.85",
+    "windowMs": 5000,
+    "obs": 92,
+    "meanReturnPct": "0.0188",
+    "diffPts": "0.0162",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_>0.85",
+    "windowMs": 10000,
+    "obs": 92,
+    "meanReturnPct": "0.0245",
+    "diffPts": "0.0206",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_>0.85",
+    "windowMs": 30000,
+    "obs": 91,
+    "meanReturnPct": "0.0278",
+    "diffPts": "0.0183",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_>0.85",
+    "windowMs": 60000,
+    "obs": 90,
+    "meanReturnPct": "0.0309",
+    "diffPts": "0.0196",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_>0.85",
+    "windowMs": 180000,
+    "obs": 87,
+    "meanReturnPct": "0.0441",
+    "diffPts": "0.0267",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "C_BUY_SURGE",
+    "windowMs": 5000,
+    "obs": 9,
+    "meanReturnPct": "-0.0047",
+    "diffPts": "-0.0072",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "C_BUY_SURGE",
+    "windowMs": 10000,
+    "obs": 9,
+    "meanReturnPct": "0.0000",
+    "diffPts": "-0.0039",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "C_BUY_SURGE",
+    "windowMs": 30000,
+    "obs": 9,
+    "meanReturnPct": "-0.0093",
+    "diffPts": "-0.0188",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "C_BUY_SURGE",
+    "windowMs": 60000,
+    "obs": 9,
+    "meanReturnPct": "-0.0045",
+    "diffPts": "-0.0159",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "C_BUY_SURGE",
+    "windowMs": 180000,
+    "obs": 9,
+    "meanReturnPct": "-0.0138",
+    "diffPts": "-0.0312",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.55-0.65",
+    "windowMs": 5000,
+    "obs": 51,
+    "meanReturnPct": "0.0037",
+    "diffPts": "0.0062",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.55-0.65",
+    "windowMs": 10000,
+    "obs": 51,
+    "meanReturnPct": "0.0033",
+    "diffPts": "0.0072",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.55-0.65",
+    "windowMs": 30000,
+    "obs": 51,
+    "meanReturnPct": "0.0057",
+    "diffPts": "0.0152",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.55-0.65",
+    "windowMs": 60000,
+    "obs": 51,
+    "meanReturnPct": "-0.0101",
+    "diffPts": "0.0013",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.55-0.65",
+    "windowMs": 180000,
+    "obs": 50,
+    "meanReturnPct": "-0.0023",
+    "diffPts": "0.0151",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "D_SELL_SURGE",
+    "windowMs": 5000,
+    "obs": 19,
+    "meanReturnPct": "0.0221",
+    "diffPts": "0.0246",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "D_SELL_SURGE",
+    "windowMs": 10000,
+    "obs": 19,
+    "meanReturnPct": "0.0244",
+    "diffPts": "0.0283",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "D_SELL_SURGE",
+    "windowMs": 30000,
+    "obs": 19,
+    "meanReturnPct": "0.0176",
+    "diffPts": "0.0272",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "D_SELL_SURGE",
+    "windowMs": 60000,
+    "obs": 19,
+    "meanReturnPct": "0.0132",
+    "diffPts": "0.0245",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "D_SELL_SURGE",
+    "windowMs": 180000,
+    "obs": 19,
+    "meanReturnPct": "0.0264",
+    "diffPts": "0.0438",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.55-0.65",
+    "windowMs": 5000,
+    "obs": 41,
+    "meanReturnPct": "0.0072",
+    "diffPts": "0.0047",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.55-0.65",
+    "windowMs": 10000,
+    "obs": 41,
+    "meanReturnPct": "0.0092",
+    "diffPts": "0.0053",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.55-0.65",
+    "windowMs": 30000,
+    "obs": 40,
+    "meanReturnPct": "0.0168",
+    "diffPts": "0.0073",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.55-0.65",
+    "windowMs": 60000,
+    "obs": 40,
+    "meanReturnPct": "0.0337",
+    "diffPts": "0.0223",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.55-0.65",
+    "windowMs": 180000,
+    "obs": 38,
+    "meanReturnPct": "0.0498",
+    "diffPts": "0.0324",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.65-0.75",
+    "windowMs": 5000,
+    "obs": 64,
+    "meanReturnPct": "-0.0062",
+    "diffPts": "-0.0037",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.65-0.75",
+    "windowMs": 10000,
+    "obs": 64,
+    "meanReturnPct": "-0.0036",
+    "diffPts": "0.0003",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.65-0.75",
+    "windowMs": 30000,
+    "obs": 63,
+    "meanReturnPct": "0.0040",
+    "diffPts": "0.0135",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.65-0.75",
+    "windowMs": 60000,
+    "obs": 62,
+    "meanReturnPct": "0.0030",
+    "diffPts": "0.0144",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "B_BEAR_T1_0.65-0.75",
+    "windowMs": 180000,
+    "obs": 61,
+    "meanReturnPct": "-0.0178",
+    "diffPts": "-0.0004",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.75-0.85",
+    "windowMs": 5000,
+    "obs": 83,
+    "meanReturnPct": "-0.0040",
+    "diffPts": "-0.0065",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.75-0.85",
+    "windowMs": 10000,
+    "obs": 83,
+    "meanReturnPct": "-0.0058",
+    "diffPts": "-0.0097",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.75-0.85",
+    "windowMs": 30000,
+    "obs": 83,
+    "meanReturnPct": "-0.0020",
+    "diffPts": "-0.0115",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.75-0.85",
+    "windowMs": 60000,
+    "obs": 82,
+    "meanReturnPct": "0.0041",
+    "diffPts": "-0.0072",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.75-0.85",
+    "windowMs": 180000,
+    "obs": 81,
+    "meanReturnPct": "0.0380",
+    "diffPts": "0.0206",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.65-0.75",
+    "windowMs": 5000,
+    "obs": 47,
+    "meanReturnPct": "0.0076",
+    "diffPts": "0.0051",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.65-0.75",
+    "windowMs": 10000,
+    "obs": 47,
+    "meanReturnPct": "0.0054",
+    "diffPts": "0.0015",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.65-0.75",
+    "windowMs": 30000,
+    "obs": 47,
+    "meanReturnPct": "0.0107",
+    "diffPts": "0.0012",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.65-0.75",
+    "windowMs": 60000,
+    "obs": 46,
+    "meanReturnPct": "-0.0014",
+    "diffPts": "-0.0127",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-STX_USDT",
+    "event": "A_BULL_T1_0.65-0.75",
+    "windowMs": 180000,
+    "obs": 45,
+    "meanReturnPct": "-0.0236",
+    "diffPts": "-0.0410",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.65-0.75",
+    "windowMs": 5000,
+    "obs": 66,
+    "meanReturnPct": "-0.0027",
+    "diffPts": "-0.0047",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.65-0.75",
+    "windowMs": 10000,
+    "obs": 66,
+    "meanReturnPct": "-0.0023",
+    "diffPts": "-0.0035",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.65-0.75",
+    "windowMs": 30000,
+    "obs": 66,
+    "meanReturnPct": "0.0044",
+    "diffPts": "-0.0025",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.65-0.75",
+    "windowMs": 60000,
+    "obs": 64,
+    "meanReturnPct": "0.0039",
+    "diffPts": "-0.0081",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.65-0.75",
+    "windowMs": 180000,
+    "obs": 61,
+    "meanReturnPct": "-0.0091",
+    "diffPts": "-0.0435",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "C_BUY_SURGE",
+    "windowMs": 5000,
+    "obs": 23,
+    "meanReturnPct": "0.0001",
+    "diffPts": "-0.0020",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "C_BUY_SURGE",
+    "windowMs": 10000,
+    "obs": 23,
+    "meanReturnPct": "-0.0012",
+    "diffPts": "-0.0024",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "C_BUY_SURGE",
+    "windowMs": 30000,
+    "obs": 23,
+    "meanReturnPct": "-0.0104",
+    "diffPts": "-0.0173",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "C_BUY_SURGE",
+    "windowMs": 60000,
+    "obs": 23,
+    "meanReturnPct": "-0.0026",
+    "diffPts": "-0.0146",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "C_BUY_SURGE",
+    "windowMs": 180000,
+    "obs": 23,
+    "meanReturnPct": "0.0055",
+    "diffPts": "-0.0288",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_>0.85",
+    "windowMs": 5000,
+    "obs": 140,
+    "meanReturnPct": "0.0152",
+    "diffPts": "0.0132",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_>0.85",
+    "windowMs": 10000,
+    "obs": 140,
+    "meanReturnPct": "0.0168",
+    "diffPts": "0.0156",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_>0.85",
+    "windowMs": 30000,
+    "obs": 138,
+    "meanReturnPct": "0.0176",
+    "diffPts": "0.0108",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_>0.85",
+    "windowMs": 60000,
+    "obs": 138,
+    "meanReturnPct": "0.0252",
+    "diffPts": "0.0132",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_>0.85",
+    "windowMs": 180000,
+    "obs": 133,
+    "meanReturnPct": "0.0680",
+    "diffPts": "0.0336",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.55-0.65",
+    "windowMs": 5000,
+    "obs": 51,
+    "meanReturnPct": "0.0006",
+    "diffPts": "-0.0014",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.55-0.65",
+    "windowMs": 10000,
+    "obs": 51,
+    "meanReturnPct": "-0.0003",
+    "diffPts": "-0.0015",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.55-0.65",
+    "windowMs": 30000,
+    "obs": 51,
+    "meanReturnPct": "0.0083",
+    "diffPts": "0.0015",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.55-0.65",
+    "windowMs": 60000,
+    "obs": 51,
+    "meanReturnPct": "0.0250",
+    "diffPts": "0.0130",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.55-0.65",
+    "windowMs": 180000,
+    "obs": 50,
+    "meanReturnPct": "0.0753",
+    "diffPts": "0.0409",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_>0.85",
+    "windowMs": 5000,
+    "obs": 85,
+    "meanReturnPct": "0.0125",
+    "diffPts": "0.0145",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_>0.85",
+    "windowMs": 10000,
+    "obs": 85,
+    "meanReturnPct": "0.0123",
+    "diffPts": "0.0135",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_>0.85",
+    "windowMs": 30000,
+    "obs": 84,
+    "meanReturnPct": "0.0140",
+    "diffPts": "0.0209",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_>0.85",
+    "windowMs": 60000,
+    "obs": 83,
+    "meanReturnPct": "0.0046",
+    "diffPts": "0.0166",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_>0.85",
+    "windowMs": 180000,
+    "obs": 81,
+    "meanReturnPct": "-0.0157",
+    "diffPts": "0.0186",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.65-0.75",
+    "windowMs": 5000,
+    "obs": 36,
+    "meanReturnPct": "0.0025",
+    "diffPts": "0.0045",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.65-0.75",
+    "windowMs": 10000,
+    "obs": 35,
+    "meanReturnPct": "0.0017",
+    "diffPts": "0.0029",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.65-0.75",
+    "windowMs": 30000,
+    "obs": 35,
+    "meanReturnPct": "-0.0152",
+    "diffPts": "-0.0083",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.65-0.75",
+    "windowMs": 60000,
+    "obs": 35,
+    "meanReturnPct": "-0.0144",
+    "diffPts": "-0.0024",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.65-0.75",
+    "windowMs": 180000,
+    "obs": 35,
+    "meanReturnPct": "-0.0357",
+    "diffPts": "-0.0013",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.55-0.65",
+    "windowMs": 5000,
+    "obs": 35,
+    "meanReturnPct": "0.0052",
+    "diffPts": "0.0072",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.55-0.65",
+    "windowMs": 10000,
+    "obs": 35,
+    "meanReturnPct": "-0.0017",
+    "diffPts": "-0.0005",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.55-0.65",
+    "windowMs": 30000,
+    "obs": 35,
+    "meanReturnPct": "0.0026",
+    "diffPts": "0.0095",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.55-0.65",
+    "windowMs": 60000,
+    "obs": 35,
+    "meanReturnPct": "-0.0114",
+    "diffPts": "0.0006",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.55-0.65",
+    "windowMs": 180000,
+    "obs": 34,
+    "meanReturnPct": "-0.0144",
+    "diffPts": "0.0199",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.75-0.85",
+    "windowMs": 5000,
+    "obs": 59,
+    "meanReturnPct": "0.0046",
+    "diffPts": "0.0026",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.75-0.85",
+    "windowMs": 10000,
+    "obs": 59,
+    "meanReturnPct": "0.0046",
+    "diffPts": "0.0034",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.75-0.85",
+    "windowMs": 30000,
+    "obs": 59,
+    "meanReturnPct": "0.0088",
+    "diffPts": "0.0019",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.75-0.85",
+    "windowMs": 60000,
+    "obs": 58,
+    "meanReturnPct": "0.0084",
+    "diffPts": "-0.0036",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "A_BULL_T1_0.75-0.85",
+    "windowMs": 180000,
+    "obs": 53,
+    "meanReturnPct": "0.0299",
+    "diffPts": "-0.0045",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.75-0.85",
+    "windowMs": 5000,
+    "obs": 36,
+    "meanReturnPct": "-0.0008",
+    "diffPts": "0.0012",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.75-0.85",
+    "windowMs": 10000,
+    "obs": 36,
+    "meanReturnPct": "-0.0059",
+    "diffPts": "-0.0047",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.75-0.85",
+    "windowMs": 30000,
+    "obs": 36,
+    "meanReturnPct": "-0.0181",
+    "diffPts": "-0.0113",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.75-0.85",
+    "windowMs": 60000,
+    "obs": 36,
+    "meanReturnPct": "-0.0026",
+    "diffPts": "0.0094",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "B_BEAR_T1_0.75-0.85",
+    "windowMs": 180000,
+    "obs": 36,
+    "meanReturnPct": "-0.0137",
+    "diffPts": "0.0206",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "D_SELL_SURGE",
+    "windowMs": 5000,
+    "obs": 16,
+    "meanReturnPct": "0.0114",
+    "diffPts": "0.0134",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "D_SELL_SURGE",
+    "windowMs": 10000,
+    "obs": 16,
+    "meanReturnPct": "0.0076",
+    "diffPts": "0.0088",
+    "category": "C) NO OBSERVED EDGE"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "D_SELL_SURGE",
+    "windowMs": 30000,
+    "obs": 16,
+    "meanReturnPct": "-0.0265",
+    "diffPts": "-0.0196",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "D_SELL_SURGE",
+    "windowMs": 60000,
+    "obs": 16,
+    "meanReturnPct": "-0.0473",
+    "diffPts": "-0.0353",
+    "category": "B) WEAK"
+  },
+  {
+    "symbol": "B-TIA_USDT",
+    "event": "D_SELL_SURGE",
+    "windowMs": 180000,
+    "obs": 15,
+    "meanReturnPct": "-0.0970",
+    "diffPts": "-0.0627",
+    "category": "B) WEAK"
+  }
+]

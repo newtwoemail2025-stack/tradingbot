@@ -1,0 +1,24 @@
+================ FINAL DIAGNOSIS ================
+
+B-SOL_USDT@orderbook@20:
+Socket.IO handshake: PASS
+Connected: PASS
+Subscription: PASS
+First depth snapshot: PASS
+Valid updates: 0
+HTTP status: N/A
+Error: NONE
+
+
+B-BTC_USDT@orderbook@20:
+Socket.IO handshake: PASS
+Connected: PASS
+Subscription: PASS
+First depth snapshot: PASS
+Valid updates: 0
+HTTP status: N/A
+Error: NONE
+
+
+FINAL CLASSIFICATION:
+D = subscription/channel problem

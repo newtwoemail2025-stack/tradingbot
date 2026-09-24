@@ -1,0 +1,17 @@
+{
+  "runId": "phase33-run-1789683663974",
+  "startTimestamp": 1789683663974,
+  "endTimestamp": 1789683963991,
+  "exchange": "CoinDCX",
+  "symbol": "B-SOL_USDT",
+  "strategyVersion": "Phase 33 Collector V2",
+  "configuration": "5-minute real data collection",
+  "dataSource": "wss://stream.coindcx.com",
+  "channel": "B-SOL_USDT@orderbook@50-futures",
+  "totalRawObservations": 12,
+  "validSnapshots": 12,
+  "invalidSnapshots": 0,
+  "reconnects": 1,
+  "firstExchangeTimestamp": 1789683664911,
+  "lastExchangeTimestamp": 1789683961759
+}

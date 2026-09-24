@@ -1,0 +1,26 @@
+================ FINAL RESULT ================
+
+Market: B-SOL_USDT@depth
+Duration: 60 seconds
+
+DNS: PASS
+TCP: PASS
+TLS: PASS
+WebSocket Upgrade: FAIL
+Socket.IO: N/A (using raw ws)
+Subscription: FAIL
+First Tick: FAIL
+
+Valid Updates: 0
+Invalid Updates: 0
+Crossed Books: 0
+Average Interval: N/A
+Maximum Gap: N/A
+Disconnects: 0
+
+FINAL:
+❌ FEED OFFLINE / UNAVAILABLE
+
+[DIAGNOSIS]
+"CoinDCX live feed was unavailable from this client during this 60-second test."
+Exact Error: HTTP 503 Service Unavailable

@@ -1,0 +1,30 @@
+{
+  "WebSocket connection": {
+    "File": "scratch/phase42b-live.js",
+    "Function": "io('wss://stream.coindcx.com')"
+  },
+  "Orderbook construction": {
+    "File": "scratch/phase42b-live.js",
+    "Function": "socket.onevent (orderbook)"
+  },
+  "Bid/Ask extraction": {
+    "File": "scratch/phase42b-live.js",
+    "Function": "payload parser"
+  },
+  "1-minute candle construction": {
+    "File": "scripts/phase43-fresh-validation.js",
+    "Function": "fetchFreshData()"
+  },
+  "Paper-trading engine": {
+    "File": "scratch/phase42b-live.js",
+    "Function": "executePaperTrade()"
+  },
+  "P&L calculation": {
+    "File": "scripts/phase20b-audit.js",
+    "Function": "(priceDiff * actualQty * usdtInr)"
+  },
+  "Leverage calculation": {
+    "File": "scripts/phase20b-audit.js",
+    "Function": "actualNotionalInr / leverage"
+  }
+}

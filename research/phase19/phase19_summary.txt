@@ -1,0 +1,42 @@
+========================================
+PHASE 19 COMPLETE
+========================================
+
+TOTAL ACTIVE FUTURES:
+1004
+
+EXECUTABLE AT 3×:
+0
+
+EXECUTABLE AT 4×:
+0
+
+EXECUTABLE AT 5×:
+0
+
+EXECUTABLE AT ANY ALLOWED LEVERAGE:
+0
+
+NOT EXECUTABLE:
+1004
+
+========================================
+TOP PRACTICAL ₹200 CANDIDATES
+========================================
+
+========================================
+IMPORTANT
+========================================
+
+Do NOT say a contract is profitable.
+
+Only determine whether it can actually be traded with:
+
+₹200 account
+3× / 4× / 5× leverage
+
+respecting all real CoinDCX exchange constraints.
+
+NEXT STEP:
+Use ONLY the executable contracts for the next strategy research phase.
+========================================

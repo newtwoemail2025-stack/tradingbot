@@ -1,0 +1,228 @@
+================ HIGH-FREQUENCY STRATEGY RESEARCH ================
+1. Actual usable data: b-sol-usdt-14d-1m.json
+2. Data duration: 14 days (10 IS, 4 OOS)
+3. WebSocket/orderbook availability: Yes (Using static paper execution simulating live spread)
+4. P&L currency: INR (₹)
+5. Fee assumptions: 0.10% per side (0.20% round trip)
+6. Spread assumptions: ±0.005% simulated slippage mapped to ask/bid
+7. Leverage: 5x (Margin only)
+8. Number of candidate strategies tested: 15
+
+Underlying P&L currency: USDT
+INR conversion method: Hardcoded Multiplier
+Conversion rate source: Project configuration (86.0)
+Final reported P&L currency: INR (₹)
+
+Transaction Costs Example:
+Entry fee: ~₹1.25
+Exit fee: ~₹1.25
+Spread: 0.01% total round-trip
+Slippage: 0% paper accounting
+Total estimated round-trip cost: ~₹2.50
+
+================ BACKTEST OUTPUT (IN-SAMPLE 10 DAYS) ================
+| Strategy | Hold | Signals/hr | Trades/hr | LONG | SHORT | Win Rate | Avg Winner | Avg Loser | Gross P&L | Fees | Net P&L | PF | Max DD |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| A-SMA_Cross | 1m | 0.92 | 0.82 | 102 | 96 | 2.02% | ₹0.98 | ₹2.83 | ₹-55.80 | ₹489.95 | ₹-545.75 | 0.01 | ₹545.75 |
+| A-SMA_Cross | 2m | 0.92 | 0.81 | 100 | 94 | 6.19% | ₹0.61 | ₹2.92 | ₹-44.59 | ₹480.01 | ₹-524.60 | 0.01 | ₹524.60 |
+| A-SMA_Cross | 3m | 0.92 | 0.78 | 98 | 88 | 8.06% | ₹2.24 | ₹3.13 | ₹-40.72 | ₹460.34 | ₹-501.06 | 0.06 | ₹501.07 |
+| A-SMA_Cross | 5m | 0.92 | 0.75 | 96 | 84 | 10.00% | ₹1.88 | ₹3.40 | ₹-71.52 | ₹445.61 | ₹-517.14 | 0.06 | ₹518.47 |
+| A-SMA_Cross | 10m | 0.92 | 0.68 | 87 | 76 | 14.72% | ₹2.87 | ₹3.86 | ₹-64.36 | ₹403.37 | ₹-467.73 | 0.13 | ₹473.03 |
+| B-Vol_Breakout | 1m | 3.88 | 3.23 | 375 | 401 | 2.06% | ₹1.40 | ₹2.71 | ₹-117.65 | ₹1917.21 | ₹-2034.86 | 0.01 | ₹2034.86 |
+| B-Vol_Breakout | 2m | 3.88 | 2.95 | 343 | 366 | 3.10% | ₹2.08 | ₹2.86 | ₹-167.98 | ₹1751.13 | ₹-1919.12 | 0.02 | ₹1919.12 |
+| B-Vol_Breakout | 3m | 3.88 | 2.77 | 320 | 345 | 4.96% | ₹1.91 | ₹2.96 | ₹-166.28 | ₹1642.49 | ₹-1808.78 | 0.03 | ₹1808.78 |
+| B-Vol_Breakout | 5m | 3.88 | 2.52 | 300 | 306 | 7.10% | ₹2.12 | ₹3.06 | ₹-134.45 | ₹1496.94 | ₹-1631.39 | 0.05 | ₹1631.39 |
+| B-Vol_Breakout | 10m | 3.88 | 2.14 | 252 | 261 | 11.31% | ₹2.64 | ₹3.43 | ₹-140.08 | ₹1267.66 | ₹-1407.74 | 0.10 | ₹1407.74 |
+| C-Acceleration | 1m | 1.58 | 1.41 | 173 | 165 | 1.48% | ₹1.26 | ₹2.72 | ₹-64.60 | ₹834.48 | ₹-899.08 | 0.01 | ₹899.08 |
+| C-Acceleration | 2m | 1.58 | 1.40 | 172 | 165 | 4.75% | ₹1.14 | ₹2.88 | ₹-73.99 | ₹832.07 | ₹-906.07 | 0.02 | ₹906.07 |
+| C-Acceleration | 3m | 1.58 | 1.38 | 170 | 162 | 6.02% | ₹1.97 | ₹3.02 | ₹-84.33 | ₹819.70 | ₹-904.02 | 0.04 | ₹904.37 |
+| C-Acceleration | 5m | 1.58 | 1.34 | 169 | 153 | 9.32% | ₹1.78 | ₹3.12 | ₹-64.07 | ₹794.93 | ₹-859.00 | 0.06 | ₹861.86 |
+| C-Acceleration | 10m | 1.58 | 1.20 | 147 | 140 | 12.89% | ₹2.40 | ₹3.56 | ₹-92.63 | ₹708.72 | ₹-801.35 | 0.10 | ₹802.41 |
+
+================ LONG VS SHORT (IN-SAMPLE 10 DAYS) ================
+| Strategy | Direction | Trades/hr | Win Rate | Avg Trade | Net P&L |
+|---|---|---|---|---|---|
+| A-SMA_Cross (1m) | LONG | 0.42 | 0.00% | ₹-2.90 | ₹-295.72 |
+| A-SMA_Cross (1m) | SHORT | 0.40 | 4.17% | ₹-2.60 | ₹-250.03 |
+| A-SMA_Cross (2m) | LONG | 0.42 | 2.00% | ₹-2.87 | ₹-286.98 |
+| A-SMA_Cross (2m) | SHORT | 0.39 | 10.64% | ₹-2.53 | ₹-237.62 |
+| A-SMA_Cross (3m) | LONG | 0.41 | 4.08% | ₹-2.82 | ₹-276.79 |
+| A-SMA_Cross (3m) | SHORT | 0.37 | 12.50% | ₹-2.55 | ₹-224.26 |
+| A-SMA_Cross (5m) | LONG | 0.40 | 7.29% | ₹-2.93 | ₹-281.15 |
+| A-SMA_Cross (5m) | SHORT | 0.35 | 13.10% | ₹-2.81 | ₹-235.99 |
+| A-SMA_Cross (10m) | LONG | 0.36 | 12.64% | ₹-2.87 | ₹-249.45 |
+| A-SMA_Cross (10m) | SHORT | 0.32 | 17.11% | ₹-2.87 | ₹-218.28 |
+| B-Vol_Breakout (1m) | LONG | 1.56 | 1.60% | ₹-2.65 | ₹-993.10 |
+| B-Vol_Breakout (1m) | SHORT | 1.67 | 2.49% | ₹-2.60 | ₹-1041.76 |
+| B-Vol_Breakout (2m) | LONG | 1.43 | 3.21% | ₹-2.72 | ₹-932.90 |
+| B-Vol_Breakout (2m) | SHORT | 1.52 | 3.01% | ₹-2.69 | ₹-986.22 |
+| B-Vol_Breakout (3m) | LONG | 1.33 | 5.00% | ₹-2.71 | ₹-868.39 |
+| B-Vol_Breakout (3m) | SHORT | 1.44 | 4.93% | ₹-2.73 | ₹-940.38 |
+| B-Vol_Breakout (5m) | LONG | 1.25 | 6.67% | ₹-2.78 | ₹-832.84 |
+| B-Vol_Breakout (5m) | SHORT | 1.27 | 7.52% | ₹-2.61 | ₹-798.54 |
+| B-Vol_Breakout (10m) | LONG | 1.05 | 9.52% | ₹-2.77 | ₹-697.39 |
+| B-Vol_Breakout (10m) | SHORT | 1.09 | 13.03% | ₹-2.72 | ₹-710.35 |
+| C-Acceleration (1m) | LONG | 0.72 | 1.73% | ₹-2.70 | ₹-466.64 |
+| C-Acceleration (1m) | SHORT | 0.69 | 1.21% | ₹-2.62 | ₹-432.44 |
+| C-Acceleration (2m) | LONG | 0.72 | 4.65% | ₹-2.71 | ₹-466.52 |
+| C-Acceleration (2m) | SHORT | 0.69 | 4.85% | ₹-2.66 | ₹-439.55 |
+| C-Acceleration (3m) | LONG | 0.71 | 7.65% | ₹-2.75 | ₹-467.19 |
+| C-Acceleration (3m) | SHORT | 0.68 | 4.32% | ₹-2.70 | ₹-436.84 |
+| C-Acceleration (5m) | LONG | 0.70 | 11.24% | ₹-2.70 | ₹-456.10 |
+| C-Acceleration (5m) | SHORT | 0.64 | 7.19% | ₹-2.63 | ₹-402.90 |
+| C-Acceleration (10m) | LONG | 0.61 | 13.61% | ₹-2.88 | ₹-422.84 |
+| C-Acceleration (10m) | SHORT | 0.58 | 12.14% | ₹-2.70 | ₹-378.50 |
+
+================ TARGET POSITION / PROFIT ================
+Strategy: A-SMA_Cross (1m)
+Actual quantity: 0.14 SOL
+Actual average winner: ₹0.98
+Actual average loser: ₹2.83
+Net average trade: ₹-2.76
+Estimated quantity required for ₹15 winner: ~2.15 SOL
+Estimated margin required at 5x: ~₹5176.26
+
+
+================ OUT-OF-SAMPLE TEST (4 DAYS) ================
+| Strategy | Hold | IS Trades | IS Net P&L | IS Win Rate | OOS Trades | OOS Net P&L | OOS Win Rate |
+|---|---|---|---|---|---|---|---|
+| A-SMA_Cross | 1m | 198 | ₹-545.75 | 2.02% | 98 | ₹-251.96 | 3.06% |
+| A-SMA_Cross | 2m | 194 | ₹-524.60 | 6.19% | 96 | ₹-226.58 | 10.42% |
+| A-SMA_Cross | 3m | 186 | ₹-501.06 | 8.06% | 92 | ₹-223.12 | 13.04% |
+| A-SMA_Cross | 5m | 180 | ₹-517.14 | 10.00% | 87 | ₹-216.48 | 16.09% |
+| A-SMA_Cross | 10m | 163 | ₹-467.73 | 14.72% | 75 | ₹-209.48 | 25.33% |
+| B-Vol_Breakout | 1m | 776 | ₹-2034.86 | 2.06% | 305 | ₹-775.73 | 2.95% |
+| B-Vol_Breakout | 2m | 709 | ₹-1919.12 | 3.10% | 277 | ₹-711.90 | 5.05% |
+| B-Vol_Breakout | 3m | 665 | ₹-1808.78 | 4.96% | 261 | ₹-607.56 | 8.43% |
+| B-Vol_Breakout | 5m | 606 | ₹-1631.39 | 7.10% | 242 | ₹-611.79 | 11.98% |
+| B-Vol_Breakout | 10m | 513 | ₹-1407.74 | 11.31% | 196 | ₹-495.42 | 18.37% |
+| C-Acceleration | 1m | 338 | ₹-899.08 | 1.48% | 139 | ₹-361.25 | 1.44% |
+| C-Acceleration | 2m | 337 | ₹-906.07 | 4.75% | 139 | ₹-370.76 | 2.88% |
+| C-Acceleration | 3m | 332 | ₹-904.02 | 6.02% | 137 | ₹-366.91 | 6.57% |
+| C-Acceleration | 5m | 322 | ₹-859.00 | 9.32% | 131 | ₹-355.10 | 8.40% |
+| C-Acceleration | 10m | 287 | ₹-801.35 | 12.89% | 119 | ₹-317.16 | 15.97% |
+
+================ LIVE FEASIBILITY CHECK ================
+Feature: SMA(3) / SMA(9)
+Available live? YES
+Source file: scratch/phase42b-live.js (or new execution script)
+Source stream: 1m completed candles (REST or derived from orderbook)
+Latency concern: LOW
+Can be calculated without future data? YES
+
+Feature: Volume SMA
+Available live? YES
+Source file: REST API candle endpoints provide volume
+Source stream: public.coindcx.com/market_data/candles
+Latency concern: MEDIUM (REST polling delay)
+Can be calculated without future data? YES
+
+Feature: 15-minute High/Low Breakout
+Available live? YES
+Source file: Local candle cache
+Source stream: Candle histories
+Latency concern: LOW
+Can be calculated without future data? YES
+
+
+================ TRADE LOG (Sample: Strategy A 1m - First 5 Trades) ================
+Trade #: 1
+Strategy: A-SMA_Cross (1m)
+Direction: SHORT
+Signal time: 2026-09-04T05:00:00.000Z
+Entry time: 2026-09-04T05:00:00.000Z
+Exit time: 2026-09-04T05:01:00.000Z
+Entry price: 103.6748
+Exit price: 103.6552
+Quantity: 0.14
+Leverage: 5
+Notional: ₹1248.24
+Margin: ₹249.65
+Gross P&L: ₹0.24
+Fees: ₹2.50
+Spread impact: Embedded in execution price
+Net P&L: ₹-2.26
+Win/Loss: LOSS
+Hold duration: 1m
+Exit reason: TIME EXIT
+
+Trade #: 2
+Strategy: A-SMA_Cross (1m)
+Direction: SHORT
+Signal time: 2026-09-04T08:45:00.000Z
+Entry time: 2026-09-04T08:45:00.000Z
+Exit time: 2026-09-04T08:46:00.000Z
+Entry price: 103.8748
+Exit price: 103.9152
+Quantity: 0.14
+Leverage: 5
+Notional: ₹1250.65
+Margin: ₹250.13
+Gross P&L: ₹-0.49
+Fees: ₹2.50
+Spread impact: Embedded in execution price
+Net P&L: ₹-2.99
+Win/Loss: LOSS
+Hold duration: 1m
+Exit reason: TIME EXIT
+
+Trade #: 3
+Strategy: A-SMA_Cross (1m)
+Direction: SHORT
+Signal time: 2026-09-04T09:22:00.000Z
+Entry time: 2026-09-04T09:22:00.000Z
+Exit time: 2026-09-04T09:23:00.000Z
+Entry price: 104.2748
+Exit price: 104.2052
+Quantity: 0.14
+Leverage: 5
+Notional: ₹1255.47
+Margin: ₹251.09
+Gross P&L: ₹0.84
+Fees: ₹2.51
+Spread impact: Embedded in execution price
+Net P&L: ₹-1.67
+Win/Loss: LOSS
+Hold duration: 1m
+Exit reason: TIME EXIT
+
+Trade #: 4
+Strategy: A-SMA_Cross (1m)
+Direction: SHORT
+Signal time: 2026-09-04T10:00:00.000Z
+Entry time: 2026-09-04T10:00:00.000Z
+Exit time: 2026-09-04T10:01:00.000Z
+Entry price: 103.8848
+Exit price: 104.0052
+Quantity: 0.14
+Leverage: 5
+Notional: ₹1250.77
+Margin: ₹250.15
+Gross P&L: ₹-1.45
+Fees: ₹2.50
+Spread impact: Embedded in execution price
+Net P&L: ₹-3.95
+Win/Loss: LOSS
+Hold duration: 1m
+Exit reason: TIME EXIT
+
+Trade #: 5
+Strategy: A-SMA_Cross (1m)
+Direction: LONG
+Signal time: 2026-09-04T11:22:00.000Z
+Entry time: 2026-09-04T11:22:00.000Z
+Exit time: 2026-09-04T11:23:00.000Z
+Entry price: 104.1552
+Exit price: 104.0548
+Quantity: 0.14
+Leverage: 5
+Notional: ₹1254.03
+Margin: ₹250.81
+Gross P&L: ₹-1.21
+Fees: ₹2.51
+Spread impact: Embedded in execution price
+Net P&L: ₹-3.72
+Win/Loss: LOSS
+Hold duration: 1m
+Exit reason: TIME EXIT
+

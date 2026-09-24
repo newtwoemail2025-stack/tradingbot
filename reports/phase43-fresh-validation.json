@@ -1,0 +1,40 @@
+{
+  "A": {
+    "longs": 0,
+    "shorts": 1,
+    "wins": 0,
+    "losses": 1,
+    "winRate": 0,
+    "grossPnL": -0.11206153000000342,
+    "totalFees": 0.02923060553000001,
+    "netPnL": -0.14129213553000342,
+    "avgPnL": -0.14129213553000342,
+    "pf": 0,
+    "maxDd": 0.14129213553000342,
+    "tradesPerDay": 6,
+    "tradesPerHour": 0.25,
+    "longWins": 0,
+    "shortWins": 0,
+    "longNet": 0,
+    "shortNet": -0.14129213553000342
+  },
+  "B": {
+    "longs": 0,
+    "shorts": 1,
+    "wins": 0,
+    "losses": 1,
+    "winRate": 0,
+    "grossPnL": -0.12326433000000209,
+    "totalFees": 0.029286606090000007,
+    "netPnL": -0.1525509360900021,
+    "avgPnL": -0.1525509360900021,
+    "pf": 0,
+    "maxDd": 0.1525509360900021,
+    "tradesPerDay": 6,
+    "tradesPerHour": 0.25,
+    "longWins": 0,
+    "shortWins": 0,
+    "longNet": 0,
+    "shortNet": -0.1525509360900021
+  }
+}

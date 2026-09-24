@@ -1,0 +1,233 @@
+================ PHASE 45 FINAL REPORT ================
+
+Account:
+₹300
+
+Leverage:
+5x
+
+Quantity:
+0.14 SOL
+
+Test duration:
+30 minutes
+
+STRATEGY A — ORDERBOOK IMBALANCE
+
+Test duration:
+30 minutes
+Signals:
+1166
+LONG signals:
+716
+SHORT signals:
+450
+
+Ignored signals:
+1165
+Executed trades:
+0
+
+LONG trades:
+1
+SHORT trades:
+0
+
+TP exits:
+0
+SL exits:
+0
+Bailout exits:
+0
+Open at session end:
+1
+
+Win rate:
+0.00%
+
+Gross P&L:
+0.00
+Fees:
+0.00
+Net P&L:
+0.00
+
+Average winner:
+0.00
+Average loser:
+0.00
+Average net trade:
+0.00
+
+Trades/hour:
+0
+Signals/hour:
+2332
+
+Winners ₹10–₹20:
+0
+Winners below ₹10:
+0
+Winners above ₹20:
+0
+
+Maximum drawdown:
+0.00
+
+Starting paper balance:
+300.00
+Realized ending balance:
+300.00
+Unrealized P&L:
+4.94
+
+--------------------------------------------------
+
+STRATEGY B — PRICE ACCELERATION
+
+Test duration:
+30 minutes
+Signals:
+107
+LONG signals:
+53
+SHORT signals:
+54
+
+Ignored signals:
+106
+Executed trades:
+0
+
+LONG trades:
+1
+SHORT trades:
+0
+
+TP exits:
+0
+SL exits:
+0
+Bailout exits:
+0
+Open at session end:
+1
+
+Win rate:
+0.00%
+
+Gross P&L:
+0.00
+Fees:
+0.00
+Net P&L:
+0.00
+
+Average winner:
+0.00
+Average loser:
+0.00
+Average net trade:
+0.00
+
+Trades/hour:
+0
+Signals/hour:
+214
+
+Winners ₹10–₹20:
+0
+Winners below ₹10:
+0
+Winners above ₹20:
+0
+
+Maximum drawdown:
+0.00
+
+Starting paper balance:
+300.00
+Realized ending balance:
+300.00
+Unrealized P&L:
+5.42
+
+--------------------------------------------------
+
+================ COMPARISON ================
+
+| Strategy | Signals/hr | Trades/hr | LONG | SHORT | TP | SL | Bailout | Win Rate | Avg Winner | Avg Loser | Net P&L |
+|----------|------------|-----------|------|-------|----|----|---------|----------|-------------|-----------|---------|
+| A        | 2332       | 0         | 1    | 0     | 0  | 0  | 0       | 0.00%    | 0.00        | 0.00      | 0.00    |
+| B        | 214        | 0         | 1    | 0     | 0  | 0  | 0       | 0.00%    | 0.00        | 0.00      | 0.00    |
+
+================ TARGET CHECK ================
+
+Strategy A:
+Actual trades/hour:
+0
+Target: 10–20/hour
+
+Actual average winning trade:
+0.00
+Target: ₹10–₹20
+
+Strategy B:
+Actual trades/hour:
+0
+Target: 10–20/hour
+
+Actual average winning trade:
+0.00
+Target: ₹10–₹20
+
+================ LIVE DATA HEALTH ================
+
+WebSocket messages:
+3341
+Valid orderbooks:
+3337
+Crossed books:
+4
+Invalid books:
+0
+Longest stale period:
+110983ms
+Disconnects:
+2
+Reconnects:
+1
+
+Verify:
+bestBid < bestAsk
+for every execution.
+
+================ CODE MAP ================
+WebSocket:
+Exact path: scripts/phase45-live-paper-trading.js
+Orderbook:
+Exact path: scripts/phase45-live-paper-trading.js
+Best Bid:
+Exact path: scripts/phase45-live-paper-trading.js
+Best Ask:
+Exact path: scripts/phase45-live-paper-trading.js
+Orderbook Imbalance strategy:
+Exact path: scripts/phase45-live-paper-trading.js
+Price Acceleration strategy:
+Exact path: scripts/phase45-live-paper-trading.js
+Signal engine:
+Exact path: scripts/phase45-live-paper-trading.js
+TP/SL engine:
+Exact path: scripts/phase45-live-paper-trading.js
+3-second bailout:
+Exact path: scripts/phase45-live-paper-trading.js
+Paper execution:
+Exact path: scripts/phase45-live-paper-trading.js
+P&L:
+Exact path: scripts/phase45-live-paper-trading.js
+Fee calculation:
+Exact path: scripts/phase45-live-paper-trading.js
+Position manager:
+Exact path: scripts/phase45-live-paper-trading.js
+Phase 45 runner:
+Exact path: scripts/phase45-live-paper-trading.js

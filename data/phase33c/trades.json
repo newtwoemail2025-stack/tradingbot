@@ -1,0 +1,36 @@
+[
+  {
+    "tradeNum": 1,
+    "direction": "LONG",
+    "entryPrice": 101.57,
+    "entryTime": 1789688487896,
+    "tp": 103.09354999999998,
+    "sl": 100.04645,
+    "bailoutThreshold": 101.46843,
+    "exitPrice": 101.45,
+    "exitTime": 1789689975460,
+    "holdDurationMs": 1487564,
+    "exitReason": "EARLY_BAILOUT",
+    "qty": 0.14,
+    "grossPnL": -0.01679999999999865,
+    "cost": 0.014211400000000003,
+    "netPnL": -0.031011399999998652
+  },
+  {
+    "tradeNum": 2,
+    "direction": "SHORT",
+    "entryPrice": 101.55,
+    "entryTime": 1789690127399,
+    "tp": 100.02674999999999,
+    "sl": 103.07324999999999,
+    "bailoutThreshold": 101.65154999999999,
+    "exitPrice": null,
+    "exitTime": null,
+    "holdDurationMs": null,
+    "exitReason": "OPEN",
+    "qty": 0.14,
+    "grossPnL": 0,
+    "cost": 0,
+    "netPnL": 0
+  }
+]

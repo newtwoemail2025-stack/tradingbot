@@ -1,0 +1,52 @@
+================ HIGH-FREQUENCY TP/SL/BAILOUT RESEARCH ================
+1. Actual usable data: b-sol-usdt-tick-data.jsonl
+2. Data duration: 0.0869 hours
+3. Resolution: Tick level / Orderbook updates
+4. P&L currency: INR (₹)
+5. Fee assumptions: 0.10% per side (0.20% round trip)
+6. Spread assumptions: Real historical bid/ask spread used
+7. Leverage: 5x (Margin only)
+8. Exits: TP 1.50%, SL 1.50%, BAILOUT 0.10% in <= 3s
+
+Underlying P&L currency: USDT
+INR conversion method: Hardcoded Multiplier
+Conversion rate source: Project configuration (86.0)
+Final reported P&L currency: INR (₹)
+
+================ BACKTEST OUTPUT (IN-SAMPLE) ================
+| Strategy | Signals/hr | Trades/hr | LONG | SHORT | Win Rate | Avg Winner | Avg Loser | TP Count | SL Count | Bailout Count | Gross P&L | Fees | Net P&L | PF | Max DD |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| A-Orderbook_Imbalance | 11.51 | 0.00 | 0 | 0 | 0.00% | ₹0.00 | ₹0.00 | 0 | 0 | 0 | ₹0.00 | ₹0.00 | ₹0.00 | 0.00 | ₹0.00 |
+| B-Price_Acceleration | 11.51 | 0.00 | 0 | 0 | 0.00% | ₹0.00 | ₹0.00 | 0 | 0 | 0 | ₹0.00 | ₹0.00 | ₹0.00 | 0.00 | ₹0.00 |
+
+================ LONG VS SHORT (IN-SAMPLE) ================
+| Strategy | Direction | Trades/hr | Win Rate | TP % | SL % | Bailout % | Avg Winner | Avg Loser | Net P&L |
+|---|---|---|---|---|---|---|---|---|---|
+| A-Orderbook_Imbalance | LONG | 0.00 | 0.00% | - | - | - | ₹0.00 | - | ₹0.00 |
+| A-Orderbook_Imbalance | SHORT | 0.00 | 0.00% | - | - | - | ₹0.00 | - | ₹0.00 |
+| B-Price_Acceleration | LONG | 0.00 | 0.00% | - | - | - | ₹0.00 | - | ₹0.00 |
+| B-Price_Acceleration | SHORT | 0.00 | 0.00% | - | - | - | ₹0.00 | - | ₹0.00 |
+
+================ TP / SL ANALYSIS ================
+Strategy: A-Orderbook_Imbalance
+TP hit rate: 0.00%
+SL hit rate: 0.00%
+Bailout hit rate: 0.00%
+Average time to TP: 0.00s
+Average time to SL: 0.00s
+Average time to bailout: 0.00s
+Longest winning trade: 0.00s
+Longest losing trade: 0.00s
+
+Strategy: B-Price_Acceleration
+TP hit rate: 0.00%
+SL hit rate: 0.00%
+Bailout hit rate: 0.00%
+Average time to TP: 0.00s
+Average time to SL: 0.00s
+Average time to bailout: 0.00s
+Longest winning trade: 0.00s
+Longest losing trade: 0.00s
+
+================ TARGET CHECK ================
+================ TRADE LOG ================

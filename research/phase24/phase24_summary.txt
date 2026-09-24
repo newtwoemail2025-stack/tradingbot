@@ -1,0 +1,172 @@
+========================================
+PHASE 24 COMPLETE
+========================================
+
+SYMBOL:
+B-SOL_USDT
+
+ACCOUNT:
+₹300
+
+DATA:
+15 MINUTES REAL COINDCX
+
+========================================
+SIGNALS
+========================================
+
+TOTAL SIGNALS:
+3
+
+EXECUTABLE:
+3
+
+TRADES:
+2
+
+TRADES/HOUR:
+8 (extrapolated)
+
+LONG:
+1
+
+SHORT:
+1
+
+========================================
+MOMENTUM LEVELS
+========================================
+
+LEVEL 1 (90th Percentile):
+Signals: 2
+Trades: 2
+Average MFE: +0.80%
+Net P&L: -₹1.05
+
+LEVEL 2 (95th Percentile):
+Signals: 1
+Trades: 0
+Average MFE: N/A
+Net P&L: N/A
+
+LEVEL 3 (99th Percentile):
+Signals: 0
+Trades: 0
+Average MFE: N/A
+Net P&L: N/A
+
+========================================
+WINNER SIZE
+========================================
+
+₹5+ winners:
+0
+
+₹10+ winners:
+0
+
+₹15+ winners:
+0
+
+₹20+ winners:
+0
+
+Average net winner:
+₹0.00 (No completed net winners in 15m window)
+
+Largest winner:
+₹0.00
+
+Average net loser:
+-₹1.05
+
+Largest loser:
+-₹1.05
+
+========================================
+PERFORMANCE
+========================================
+
+TP first:
+0%
+
+SL first:
+50% (1 Trade)
+(1 Trade OPEN AT DATA END)
+
+Average MFE:
++0.80%
+
+Median MFE:
++0.80%
+
+Average MAE:
+-0.65%
+
+Gross P&L:
+-₹0.50
+
+Costs:
+₹0.55
+
+NET P&L:
+-₹1.05
+
+Expectancy:
+-₹1.05
+
+========================================
+3× VS 5×
+========================================
+
+3×:
+Net P&L: -₹1.05
+Expectancy: -₹1.05
+
+5×:
+Net P&L: -₹1.05
+Expectancy: -₹1.05
+
+========================================
+TARGET CHECK
+========================================
+
+5–10 trades/hour:
+INCONCLUSIVE (Extrapolates to 8, but sample too small)
+
+₹10 NET winner:
+INCONCLUSIVE
+
+₹15 NET winner:
+INCONCLUSIVE
+
+₹20 NET winner:
+INCONCLUSIVE
+
+========================================
+BASELINE COMPARISON
+========================================
+
+Phase 22/23 MFE:
++0.75%
+
+Phase 24 MFE:
++0.80%
+
+Phase 22/23 frequency:
+4-7/hour
+
+Phase 24 frequency:
+8/hour (Level 1 only. Level 2/3 virtually 0/hour)
+
+========================================
+FINAL STATUS
+========================================
+
+B
+
+Reason:
+INCONCLUSIVE. While increasing the entry stringency to the 90th percentile slightly bumped MFE (+0.75% -> +0.80%), it violently degrades trade frequency at higher levels (Level 2/3 generated 0 trades). An MFE of +0.80% is still mathematically insufficient to securely clear the fixed-cost hurdle required for ₹10-₹20 net winners.
+
+DO NOT automatically start another test.
+WAIT FOR USER INSTRUCTION.

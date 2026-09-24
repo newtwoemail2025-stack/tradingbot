@@ -1,0 +1,2 @@
+tradeId,candidate,direction,entryTime,entryPrice,exitTime,exitPrice,quantity,notional,usedMargin,holdDurationMs,exitReason,grossPnlUsdt,entryFeeUsdt,exitFeeUsdt,feesUsdt,netPnlUsdt,MFE,MAE,balanceBefore,balanceAfter,status
+1,A,SHORT,1789748280522,2593.6,1789751018581,2590.05,0.01,25.936,3.242,2738059,OPEN_AT_SESSION_END,0.03549999999999727,0.025936,0.0259005,0.0518365,-0.01633650000000273,6.099999999999909,15.849999999999909,3.488372093023256,3.472035593023253,OPEN_AT_SESSION_END

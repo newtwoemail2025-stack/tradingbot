@@ -1,0 +1,32 @@
+================ PHASE 50 CAPITAL-CONSTRAINED REPLAY ================
+REAL COINDCX DATA
+ACCOUNT = ₹300
+LEVERAGE = 5×
+ONE POSITION AT A TIME
+==================================================================
+
+--- CAPITAL VALIDATION ---
+Position Qty: 0.14 SOL
+Position Notional: $14.79
+Required Margin: ₹254.35
+Available Margin: ₹300.00
+Status: VALID
+
+--- SAMPLE RESULTS (Candidate B | TP=0.20%, SL=0.15% | Fee=0.10%) ---
+1. How many Phase 50 signals occurred? 96
+2. How many became actual entries? 27
+3. How many were ignored because the account already had a position? 69
+4. How many completed trades occurred? 27
+5. How many trades/hour actually occurred? 108.0
+6. How much margin was used? ~₹254.35 at peak
+7. What was gross P&L? $0.2646
+8. What were total fees? $0.7992
+9. What was net P&L? $-0.5346
+10. How many positions remained open? 0
+
+--- FEE SENSITIVITY HIGHLIGHTS ---
+If Taker Fee is reduced to 0.05%:
+Net P&L changes from $-0.5346 to $-0.0203
+
+--- LIMITATIONS ---
+This is a 15-minute sample only. No long term profitability is claimed.

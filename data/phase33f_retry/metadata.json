@@ -1,0 +1,14 @@
+{
+  "runId": "phase33f-retry-1789696115381",
+  "startTimestamp": 1789696115381,
+  "endTimestamp": 1789697915392,
+  "feedFailed": false,
+  "exchange": "CoinDCX",
+  "symbol": "B-SOL_USDT",
+  "strategyVersion": "Phase 33F-RETRY",
+  "totalRawUpdates": 3562,
+  "validStates": 93,
+  "reconnects": 1,
+  "firstExchangeTimestamp": 1789696116492,
+  "lastExchangeTimestamp": 1789697915412
+}

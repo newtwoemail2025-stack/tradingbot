@@ -1,0 +1,57 @@
+================ PHASE 50A ================
+REAL PHASE 50 EXIT ANALYSIS / REPLAY
+=============================================
+
+DATASET
+Total Observations: 1777
+Session Length: 15 minutes
+
+SIGNAL ANALYSIS
+Total Raw Signals: 503
+Candidate A -> 165 signals (LONG: 102, SHORT: 63)
+  Avg MFE: 0.0987% | Avg MAE: 0.0824%
+Candidate B -> 96 signals (LONG: 68, SHORT: 28)
+  Avg MFE: 0.1137% | Avg MAE: 0.0745%
+Candidate C -> 152 signals (LONG: 94, SHORT: 58)
+  Avg MFE: 0.0978% | Avg MAE: 0.0823%
+Candidate D -> 90 signals (LONG: 63, SHORT: 27)
+  Avg MFE: 0.1119% | Avg MAE: 0.0748%
+
+MFE/MAE THRESHOLDS (Across all signals)
+  +0.05%: 54.7%   |   -0.05%: 47.9%
+  +0.10%: 45.9%   |   -0.10%: 27.4%
+  +0.15%: 30.0%   |   -0.15%: 19.1%
+  +0.20%: 18.5%   |   -0.20%: 8.2%
+  +0.25%: 10.3%   |   -0.25%: 5.8%
+  +0.30%: 3.6%   |   -0.30%: 2.0%
+  +0.50%: 0.0%   |   -0.50%: 0.0%
+  +0.75%: 0.0%   |   -0.75%: 0.0%
+  +1.00%: 0.0%   |   -1.00%: 0.0%
+  +1.50%: 0.0%   |   -1.50%: 0.0%
+
+TRADES/HOUR (Sample Config: Candidate B, TP=0.20%, SL=0.15%)
+  Attempted: 1 | Completed: 0 (0.0 trades/hr)
+  Open at end: 1 | Avg Hold: 0.0s
+  TP Hits: 0 | SL Hits: 0
+
+P&L + COSTS
+  Move 0.05% -> Gross: $0.0074 | Fees: $0.0296 | Net: $-0.0222
+  Move 0.10% -> Gross: $0.0148 | Fees: $0.0296 | Net: $-0.0148
+  Move 0.15% -> Gross: $0.0222 | Fees: $0.0296 | Net: $-0.0074
+  Move 0.20% -> Gross: $0.0296 | Fees: $0.0296 | Net: $-0.0000
+  Move 0.25% -> Gross: $0.0370 | Fees: $0.0296 | Net: $0.0074
+  Move 0.30% -> Gross: $0.0444 | Fees: $0.0296 | Net: $0.0148
+  Move 0.50% -> Gross: $0.0739 | Fees: $0.0296 | Net: $0.0444
+  Move 0.75% -> Gross: $0.1109 | Fees: $0.0296 | Net: $0.0813
+  Move 1.00% -> Gross: $0.1479 | Fees: $0.0296 | Net: $0.1183
+  Move 1.50% -> Gross: $0.2218 | Fees: $0.0296 | Net: $0.1922
+
+₹300 / 5× CAPITAL ANALYSIS
+  Max Notional Available: $17.44
+  Phase 50 QTY used: 0.14 SOL (Approx $14.79 notional)
+  Margin Used: ₹254.35
+
+LIMITATIONS
+- 15-minute sample size is too small for statistical proof.
+- Favorable moves tend to disappear within 15-30 seconds.
+- 1.50% moves do not occur naturally within a 15-min calm session.

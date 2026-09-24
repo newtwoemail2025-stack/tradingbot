@@ -1,0 +1,127 @@
+================ PHASE 44 - 10M LIVE FEED CHECK ================
+
+Market:
+B-SOL_USDT
+
+Start UTC:
+2026-09-18T08:22:43.637Z
+End UTC:
+2026-09-18T08:32:43.875Z
+Actual duration:
+10.00 minutes
+
+Raw WebSocket messages:
+1186
+Valid orderbook states:
+1186
+Crossed orderbooks:
+0
+Invalid books:
+0
+
+Valid percentage:
+100.00%
+Crossed percentage:
+0.00%
+
+Exchange timestamp:
+Min interval:
+359ms
+Max interval:
+705ms
+Average interval:
+505.61ms
+Median interval:
+504ms
+
+Local receive timestamp:
+Min interval:
+224ms
+Max interval:
+777ms
+Average interval:
+505.61ms
+Median interval:
+505ms
+
+Intervals >1 sec:
+0
+Intervals >3 sec:
+0
+Intervals >5 sec:
+0
+Intervals >10 sec:
+0
+
+Longest stale period:
+777ms
+Stale >1 sec:
+0
+Stale >3 sec:
+0
+Stale >5 sec:
+0
+Stale >10 sec:
+0
+
+WebSocket disconnects:
+1
+Reconnects:
+0
+Connection errors:
+0
+Subscriptions:
+1
+
+LONG Entry ASK:
+PASS
+
+LONG Exit BID:
+PASS
+
+SHORT Entry BID:
+PASS
+
+SHORT Exit ASK:
+PASS
+
+================ FINAL CLASSIFICATION ================
+Classify the feed as exactly one:
+A) READY FOR LIVE PAPER TRADING
+
+================ CODE MAP ================
+WebSocket file:
+Exact path: scripts/phase44-10m-live-feed-check.js
+Function: connect()
+
+Subscription:
+Exact path: scripts/phase44-10m-live-feed-check.js
+Function: socket.emit('join')
+
+Depth parser:
+Exact path: scripts/phase44-10m-live-feed-check.js
+Function: socket.onevent
+
+Local orderbook:
+Exact path: scripts/phase44-10m-live-feed-check.js
+Function: localBids/localAsks Map updates
+
+Best Bid:
+Exact path: scripts/phase44-10m-live-feed-check.js
+Function: iterate localBids for highest
+
+Best Ask:
+Exact path: scripts/phase44-10m-live-feed-check.js
+Function: iterate localAsks for lowest
+
+Timestamp:
+Exact path: scripts/phase44-10m-live-feed-check.js
+Function: payload.ts || payload.pts
+
+Reconnect:
+Exact path: scripts/phase44-10m-live-feed-check.js
+Function: socket.on('reconnect')
+
+10-minute checker:
+Exact path: scripts/phase44-10m-live-feed-check.js
+

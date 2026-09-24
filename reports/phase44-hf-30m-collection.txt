@@ -1,0 +1,71 @@
+================ PHASE 44 - 30M DATA COLLECTION ================
+
+Market: B-SOL_USDT
+Start UTC: 2026-09-18T07:41:53.271Z
+End UTC: 2026-09-18T08:11:53.125Z
+
+Requested duration: 30 minutes
+Actual duration: 30.00 minutes
+
+Total updates: 824
+Average updates/sec: 0.46
+Average updates/min: 27.47
+
+Minimum update interval: 425ms
+Maximum update interval: 57120ms
+Average update interval: 670.96ms
+Median update interval: 504ms
+
+Malformed messages: 0
+Invalid bid count: 0
+Invalid ask count: 0
+Crossed orderbook count: 2736
+Duplicate timestamps: 0
+Out-of-order: 0
+Gap count (>1s): 0
+
+Longest stale period: 3220ms
+Number of stale periods >1 sec: 0
+Number of stale periods >3 sec: 1
+Number of stale periods >5 sec: 0
+Number of stale periods >10 sec: 0
+
+WebSocket connections: 1
+Reconnects: 0
+Connection errors: 0
+Unexpected disconnects: 1
+
+Valid Bid/Ask observations: 824
+
+First Bid: 105.89
+Last Bid: 105.98
+
+First Ask: 105.9
+Last Ask: 105.99
+
+================ DATA USABILITY CHECK ================
+Classified as: B) PARTIALLY USABLE — DATA QUALITY ISSUES
+
+================ IMPORTANT CODE MAP ================
+WebSocket file: scratch/phase42b-live.js
+Function/class: io('wss://stream.coindcx.com')
+
+Subscription file: scratch/phase42b-live.js
+Function/class: socket.emit('join', ...)
+
+Orderbook parser: scratch/phase42b-live.js
+Function/class: socket.onevent
+
+Bid/Ask extraction: scratch/phase42b-live.js
+Function/class: depth payload iterating bids/asks
+
+Reconnect logic: scratch/phase42b-live.js
+Function/class: socket.on('reconnect')
+
+Phase 44 collector: scripts/phase44-collector.js
+
+Output file: data/phase44-hf-30m-orderbook.json
+
+REAL LIVE WEBSOCKET DATA: YES
+RAW SUB-MINUTE DATA SAVED: YES
+CAN SUPPORT 3-SECOND BAILOUT BACKTEST: NO

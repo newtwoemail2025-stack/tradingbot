@@ -1,0 +1,27 @@
+{
+  "timestamp": "2026-09-18T12:33:10.753Z",
+  "endpoint": "wss://stream.coindcx.com",
+  "market": "B-SOL_USDT@depth",
+  "stages": {
+    "dns": "PASS",
+    "tcp": "PASS",
+    "tls": "PASS",
+    "wsUpgrade": "FAIL",
+    "socketIO": "N/A (using raw ws)",
+    "subscription": "FAIL",
+    "firstTick": "FAIL"
+  },
+  "httpStatus": 503,
+  "wsStatus": "DISCONNECTED",
+  "totalMessages": 0,
+  "validUpdates": 0,
+  "invalidUpdates": 0,
+  "crossedBooks": 0,
+  "intervals": [],
+  "maxGap": 0,
+  "disconnects": 0,
+  "reconnects": 0,
+  "lastMsgTs": null,
+  "exactError": "HTTP 503 Service Unavailable",
+  "finalResult": "❌ FEED OFFLINE / UNAVAILABLE"
+}

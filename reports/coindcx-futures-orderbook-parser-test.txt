@@ -1,0 +1,21 @@
+================ DATA INGESTION TEST ================
+
+Raw depth messages: 2
+Parsed depth messages: 2
+Valid orderbook updates: 2
+Malformed messages: 0
+Parser errors: 0
+
+First tick: 1789735754339
+Last tick: 1789735784834
+
+Average update interval: 30495.0 ms
+Maximum update gap: 30495 ms
+
+Best bid: 105.93
+Best ask: 105.93
+Mid: 105.9300
+Spread: 0.0000
+
+FINAL:
+❌ ORDERBOOK INGESTION FAILED

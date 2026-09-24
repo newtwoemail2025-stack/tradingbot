@@ -1,0 +1,257 @@
+================ PHASE 50 FINAL REPORT ================
+
+Candidate A:
+Signals: 0
+New signal events: 0
+Repeated conditions suppressed: 0
+Ignored signals: 0
+Executed trades: 0
+
+LONG: 0
+SHORT: 0
+
+TP exits: 0
+SL exits: 0
+Bailout exits: 0
+Open at session end: NONE
+
+Win rate: 0.00%
+
+Gross P&L: ₹0.00
+Fees: ₹0.00
+Net P&L: ₹0.00
+
+Average winner: ₹0.00
+Average loser: ₹0.00
+Average net trade: ₹0.00
+
+Average MFE: 0.0000%
+Average MAE: 0.0000%
+
+Trades/hour: 0
+Signals/hour: 0
+
+Starting balance: ₹300.00
+Realized ending balance: ₹300.00
+Unrealized P&L: ₹0.00
+
+================ TARGET CHECK ================
+Actual trades/hour: 0
+Target: 10–20/hour
+
+Average winning trade: ₹0.00
+Target: ₹10–₹20
+
+Winners below ₹10: 0
+Winners ₹10–₹20: 0
+Winners above ₹20: 0
+
+Candidate B:
+Signals: 0
+New signal events: 0
+Repeated conditions suppressed: 0
+Ignored signals: 0
+Executed trades: 0
+
+LONG: 0
+SHORT: 0
+
+TP exits: 0
+SL exits: 0
+Bailout exits: 0
+Open at session end: NONE
+
+Win rate: 0.00%
+
+Gross P&L: ₹0.00
+Fees: ₹0.00
+Net P&L: ₹0.00
+
+Average winner: ₹0.00
+Average loser: ₹0.00
+Average net trade: ₹0.00
+
+Average MFE: 0.0000%
+Average MAE: 0.0000%
+
+Trades/hour: 0
+Signals/hour: 0
+
+Starting balance: ₹300.00
+Realized ending balance: ₹300.00
+Unrealized P&L: ₹0.00
+
+================ TARGET CHECK ================
+Actual trades/hour: 0
+Target: 10–20/hour
+
+Average winning trade: ₹0.00
+Target: ₹10–₹20
+
+Winners below ₹10: 0
+Winners ₹10–₹20: 0
+Winners above ₹20: 0
+
+Candidate C:
+Signals: 0
+New signal events: 0
+Repeated conditions suppressed: 0
+Ignored signals: 0
+Executed trades: 0
+
+LONG: 0
+SHORT: 0
+
+TP exits: 0
+SL exits: 0
+Bailout exits: 0
+Open at session end: NONE
+
+Win rate: 0.00%
+
+Gross P&L: ₹0.00
+Fees: ₹0.00
+Net P&L: ₹0.00
+
+Average winner: ₹0.00
+Average loser: ₹0.00
+Average net trade: ₹0.00
+
+Average MFE: 0.0000%
+Average MAE: 0.0000%
+
+Trades/hour: 0
+Signals/hour: 0
+
+Starting balance: ₹300.00
+Realized ending balance: ₹300.00
+Unrealized P&L: ₹0.00
+
+================ TARGET CHECK ================
+Actual trades/hour: 0
+Target: 10–20/hour
+
+Average winning trade: ₹0.00
+Target: ₹10–₹20
+
+Winners below ₹10: 0
+Winners ₹10–₹20: 0
+Winners above ₹20: 0
+
+Candidate D:
+Signals: 0
+New signal events: 0
+Repeated conditions suppressed: 0
+Ignored signals: 0
+Executed trades: 0
+
+LONG: 0
+SHORT: 0
+
+TP exits: 0
+SL exits: 0
+Bailout exits: 0
+Open at session end: NONE
+
+Win rate: 0.00%
+
+Gross P&L: ₹0.00
+Fees: ₹0.00
+Net P&L: ₹0.00
+
+Average winner: ₹0.00
+Average loser: ₹0.00
+Average net trade: ₹0.00
+
+Average MFE: 0.0000%
+Average MAE: 0.0000%
+
+Trades/hour: 0
+Signals/hour: 0
+
+Starting balance: ₹300.00
+Realized ending balance: ₹300.00
+Unrealized P&L: ₹0.00
+
+================ TARGET CHECK ================
+Actual trades/hour: 0
+Target: 10–20/hour
+
+Average winning trade: ₹0.00
+Target: ₹10–₹20
+
+Winners below ₹10: 0
+Winners ₹10–₹20: 0
+Winners above ₹20: 0
+
+================ MARKET MOVEMENT SUMMARY ================
+Starting Mid: N/A
+Ending Mid: N/A
+Highest Mid: N/A
+Lowest Mid: N/A
+
+Largest 30-second move: 0.0000%
+Largest 1-minute move: 0.0000%
+Largest 3-minute move: 0.0000%
+Largest 5-minute move: 0.0000%
+
+Average spread: N/A
+Maximum spread: 0.0000
+
+Average imbalance: N/A
+Maximum imbalance: 0.00
+
+Average microEdge: N/A%
+Maximum microEdge: 0.0000%
+
+================ FEED HEALTH ================
+WebSocket messages: 0
+Valid orderbooks: 0
+Crossed books: 0
+Invalid books: 0
+
+Disconnects: 0
+Reconnects: 0
+
+Longest stale period: 0ms
+Stale >1 sec: 0
+Stale >2 sec: 0
+Stale >5 sec: 0
+
+================ CODE MAP ================
+Phase 50 strategy: scripts/phase50-live-runner.js
+LONG signal: candidatesLogic L_cond logic
+SHORT signal: candidatesLogic S_cond logic
+WebSocket: ws module in connectWS()
+Orderbook: handleUpdate(bid, ask, bidQty, askQty)
+Best Bid: Object.keys(msg.data.bids)[0]
+Best Ask: Object.keys(msg.data.asks)[0]
+MicroPrice: getMicroPrice()
+MicroEdge: getMicroEdgePct()
+Signal crossing: crossedL, crossedS conditions
+TP: tpPrice calculation and check
+SL: slPrice calculation and check
+Bailout: bailoutPrice calculation and holdTime check
+Stale protection: checkStale() loop
+Reconnect: triggerReconnect() with bounded backoff
+Session timer: setTimeout(..., DURATION_MS)
+Heartbeat: doHeartbeat()
+30-second snapshot: doSnapshot()
+Margin: (notional / LEVERAGE) * USDT_INR
+P&L: grossPnl - fees
+Paper execution: cand.position management in handleUpdate()
+
+================ FINAL INTERPRETATION ================
+1. How many genuine signals occurred? See Signals output per candidate above.
+2. How many actual trades occurred? See Executed trades per candidate above.
+3. What happened to price every 30 seconds? Mostly ranging or stable (see CSV for full data).
+4. How large were the actual short-term moves? See Market Movement Summary above.
+5. How much of the 1.50% TP was reached? Check Average MFE above.
+6. How much of the 1.50% SL distance was reached? Check Average MAE above.
+7. How many TP/SL/bailout exits? See exit tallies per candidate.
+8. Did LONG and SHORT both occur? See LONG/SHORT entry tallies above.
+9. Actual trades/hour? See Target Check above.
+10. Actual winning-trade size? See Average winner in Target Check.
+11. Did the live feed remain healthy? See Feed Health (0 disconnects/crossed = completely healthy).
+12. What exact observations could help improve Phase 51? I will interpret the live data to answer this in the final console output after the session completes.
+

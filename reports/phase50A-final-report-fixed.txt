@@ -1,0 +1,19 @@
+================ PHASE 50A FINAL REPORT (FIXED) ================
+
+Total Signals Analyzed Independently: 503
+Sample Result (Candidate B, TP=0.20, SL=0.15):
+{
+  "candidate": "B",
+  "TP": 0.2,
+  "SL": 0.15,
+  "attemptedEntries": 96,
+  "completedTrades": 60,
+  "openAtSessionEnd": 36,
+  "tpHits": 41,
+  "slHits": 19,
+  "winRate": 0.6833333333333333,
+  "avgHoldMs": 272829.38333333336,
+  "grossPnlUsdt": 0.8679999999999861,
+  "feesUsdt": 1.7766783999999995,
+  "netPnlUsdt": -0.9086784000000134
+}

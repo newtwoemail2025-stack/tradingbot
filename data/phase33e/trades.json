@@ -1,0 +1,19 @@
+[
+  {
+    "tradeNum": 1,
+    "direction": "LONG",
+    "entryPrice": 101.49,
+    "entryTime": 1789693339794,
+    "tp": 103.01234999999998,
+    "sl": 99.96764999999999,
+    "bailoutThreshold": 101.38851,
+    "exitPrice": null,
+    "exitTime": null,
+    "holdDurationMs": null,
+    "exitReason": "OPEN",
+    "qty": 0.14,
+    "grossPnL": 0,
+    "cost": 0,
+    "netPnL": 0
+  }
+]

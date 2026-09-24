@@ -1,0 +1,51 @@
+================ PHASE 50 FINAL REPORT ================
+
+FEED HEALTH
+- total messages: 1787
+- valid messages: 1787
+- invalid messages: 0
+- crossed books: 0
+- disconnects: 0
+- reconnects: 1
+- maximum stale duration: 816ms
+
+Candidate A:
+Signals: 165
+Executed trades: 1
+LONG: 0
+SHORT: 0
+TP: 0
+SL: 0
+BAILOUT: 0
+Open at session end: OPEN_AT_ABORT
+
+Candidate B:
+Signals: 96
+Executed trades: 1
+LONG: 0
+SHORT: 0
+TP: 0
+SL: 0
+BAILOUT: 0
+Open at session end: OPEN_AT_ABORT
+
+Candidate C:
+Signals: 152
+Executed trades: 1
+LONG: 0
+SHORT: 0
+TP: 0
+SL: 0
+BAILOUT: 0
+Open at session end: OPEN_AT_ABORT
+
+Candidate D:
+Signals: 90
+Executed trades: 1
+LONG: 0
+SHORT: 0
+TP: 0
+SL: 0
+BAILOUT: 0
+Open at session end: OPEN_AT_ABORT
+

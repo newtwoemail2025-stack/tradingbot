@@ -1,0 +1,115 @@
+C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:726
+            candidateASignals: candidates['A'].signals, candidateBSignals: candidates['B'].signals,
+                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'signals')
+    at finalizeSession (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:726:48)
+    at Timeout.<anonymous> (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:588:37)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+
+Node.js v20.17.0
+C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:744
+            candidateASignals: candidates['A'].signals, candidateBSignals: candidates['B'].signals,
+                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'signals')
+    at finalizeSession (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:744:48)
+    at Timeout.<anonymous> (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:606:37)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+
+Node.js v20.17.0
+[PREFLIGHT] FAIL: getaddrinfo ENOTFOUND api.coindcx.com
+[PREFLIGHT] FAIL: getaddrinfo ENOTFOUND api.coindcx.com
+[PREFLIGHT] FAIL: getaddrinfo ENOTFOUND api.coindcx.com
+C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:752
+            totalTrades: totTrades,
+                         ^
+
+ReferenceError: totTrades is not defined
+    at finalizeSession (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:752:26)
+    at Timeout.<anonymous> (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:610:37)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+
+Node.js v20.17.0
+C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:752
+            totalTrades: totTrades,
+                         ^
+
+ReferenceError: totTrades is not defined
+    at finalizeSession (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:752:26)
+    at Timeout.checkWatchdog (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:601:9)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+
+Node.js v20.17.0
+C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:752
+            totalTrades: totTrades,
+                         ^
+
+ReferenceError: totTrades is not defined
+    at finalizeSession (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:752:26)
+    at Timeout.<anonymous> (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:610:37)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+
+Node.js v20.17.0
+C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:762
+            totalTrades: totTrades,
+                         ^
+
+ReferenceError: totTrades is not defined
+    at finalizeSession (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:762:26)
+    at Timeout.<anonymous> (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:620:37)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+
+Node.js v20.17.0
+C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:762
+            totalTrades: totTrades,
+                         ^
+
+ReferenceError: totTrades is not defined
+    at finalizeSession (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:762:26)
+    at Timeout.<anonymous> (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:620:37)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+
+Node.js v20.17.0
+C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:764
+            totalTrades: totTrades,
+                         ^
+
+ReferenceError: totTrades is not defined
+    at finalizeSession (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:764:26)
+    at Timeout.checkWatchdog (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:621:9)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+
+Node.js v20.17.0
+C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:796
+            totalTrades: totTrades,
+                         ^
+
+ReferenceError: totTrades is not defined
+    at finalizeSession (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:796:26)
+    at Timeout.checkWatchdog (C:\Users\Mohammad Ehtisham\OneDrive\Desktop\algotrading\scripts\phase51-15m-live-runner.js:653:9)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7)
+
+Node.js v20.17.0
+[PREFLIGHT] FAIL: getaddrinfo ENOTFOUND api.coindcx.com
+[HISTORY] Could not load previous 60 completed 1M candles: Only 0 valid completed candles returned; need 60
+[HISTORY] Bot will continue live-only and build the 60M context from new candles.
+[HISTORY] Could not load previous 60 completed 1M candles: Only 0 valid completed candles returned; need 60
+[HISTORY] Bot will continue live-only and build the 60M context from new candles.
+[HISTORY] Could not load previous 60 completed 1M candles: Only 0 valid completed candles returned; need 60
+[HISTORY] Bot will continue live-only and build the 60M context from new candles.
+[HISTORY] Could not load previous 60 completed 1M candles: Only 0 valid completed candles returned; need 60
+[HISTORY] Bot will continue live-only and build the 60M context from new candles.
+[PREFLIGHT] FAIL: Configured leverage 50x exceeds max permitted 20x
+[PREFLIGHT] FAIL: Configured leverage 50x exceeds max permitted 20x
+[PREFLIGHT] FAIL: Configured leverage 50x exceeds max permitted 20x
+[PREFLIGHT] FAIL: Configured leverage 50x exceeds max permitted 20x

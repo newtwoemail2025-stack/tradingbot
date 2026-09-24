@@ -1,0 +1,74 @@
+{
+  "SESSION": {
+    "sessionId": "20260921-132500",
+    "startTime": 1789997106433,
+    "endTime": 1789997706545,
+    "durationMs": 600112
+  },
+  "ACCOUNT": {
+    "startingBalanceInr": 1000,
+    "startingBalanceUsdt": 11.627906976744185,
+    "leverage": 20,
+    "usdInrRate": 86
+  },
+  "INSTRUMENT": {
+    "symbol": "B-ETH_USDT",
+    "ethPriceAtStart": 2732.8,
+    "quantity": 0.009,
+    "quantityStep": 0.001,
+    "minimumQuantity": 0.001,
+    "minimumNotional": 24,
+    "actualPositionNotional": 24.5952,
+    "requiredMargin": 1.22976,
+    "availableMargin": 11.627906976744185,
+    "maximumPermittedLeverage": 20
+  },
+  "FEED": {
+    "totalMessages": 1205,
+    "validMessages": 1205,
+    "invalidMessages": 0,
+    "snapshotMessages": 680,
+    "incrementalMessages": 525,
+    "crossedBooks": 0,
+    "disconnects": 0,
+    "reconnects": 1,
+    "parserErrors": 0,
+    "subscriptionErrors": 0,
+    "maxStaleMs": 947,
+    "averageUpdateIntervalMs": 498.0182572614108
+  },
+  "STRATEGY": {
+    "confluenceSignals": 10,
+    "totalSignals": 10,
+    "historicalContextEnabled": true,
+    "historicalExamplesCreated": 30,
+    "historicalFilterReady": true
+  },
+  "TRADING": {
+    "totalTrades": 0,
+    "totalTakeProfit": 0,
+    "totalStopLoss": 0,
+    "totalBailout": 0,
+    "totalWins": 0,
+    "totalLosses": 0,
+    "ignoredInsufficientMargin": 0,
+    "completedTrades": 0,
+    "openAtSessionEnd": 0,
+    "longEntries": 0,
+    "shortEntries": 0,
+    "tpHits": 0,
+    "slHits": 0,
+    "bailoutHits": 0,
+    "maxConcurrentPositions": "UNLIMITED"
+  },
+  "PnL": {
+    "grossPnlUsdt": 0,
+    "feesUsdt": 0,
+    "netPnlUsdt": 0,
+    "maxDrawdownUsdt": 0
+  },
+  "PERFORMANCE": {
+    "averageHoldMs": 0,
+    "tradesPerHour": 0
+  }
+}

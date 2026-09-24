@@ -1,0 +1,69 @@
+==================================================
+PHASE 51 — ETH LIVE PAPER TRADING
+==================================================
+Market: B-ETH_USDT
+Starting Balance: ₹300
+Leverage: 8×
+Duration: 15 minutes
+
+==================================================
+CAPITAL VALIDATION
+==================================================
+USD/INR: 86
+Available USDT: 3.4884
+Maximum notional at 8×: 27.9070
+Minimum ETH quantity: 0.001
+Quantity step: 0.001
+Minimum notional: 24
+Selected quantity: 0.01
+Position notional: 25.6533
+Required margin: 3.2067
+Capital validation: PASS
+
+==================================================
+FEED HEALTH
+==================================================
+Total messages: 1802
+Valid messages: 1802
+Invalid messages: 0
+Disconnects: 0
+Reconnects: 1
+Maximum stale duration: 793ms
+
+==================================================
+SIGNALS
+==================================================
+Candidate A: 0
+Candidate B: 0
+Candidate C: 0
+Candidate D: 0
+Total signals: 0
+
+==================================================
+TRADING
+==================================================
+Actual entries: 0
+Ignored due to insufficient margin: 0
+Completed trades: 0
+Open at session end: 0
+LONG: 0
+SHORT: 0
+TP: 0
+SL: 0
+Bailout: 0
+Maximum concurrent positions: UNLIMITED
+
+==================================================
+P&L
+==================================================
+Gross P&L: 0.0000
+Fees: 0.0000
+Net P&L: 0.0000
+Maximum drawdown: 0.0000
+
+==================================================
+IMPORTANT
+==================================================
+PAPER TRADING ONLY
+NO REAL ORDERS WERE SUBMITTED.
+Do not claim the strategy is profitable from this 15-minute sample.

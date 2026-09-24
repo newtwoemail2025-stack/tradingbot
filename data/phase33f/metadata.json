@@ -1,0 +1,13 @@
+{
+  "runId": "phase33f-run-1789693925409",
+  "startTimestamp": 1789693925409,
+  "endTimestamp": 1789695779029,
+  "exchange": "CoinDCX",
+  "symbol": "B-SOL_USDT",
+  "strategyVersion": "Phase 33F High-Freq Validation",
+  "totalRawUpdates": 2408,
+  "validStates": 299,
+  "reconnects": 1,
+  "firstExchangeTimestamp": 1789693926356,
+  "lastExchangeTimestamp": 1789695143854
+}
