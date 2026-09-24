@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useState, useRef } from 'react';
-import io from 'socket.io-client';
 
 // Removed durations array since we'll run from terminal
 
